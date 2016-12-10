@@ -20,7 +20,7 @@ The program `libft.a` will be created inside the `libs/` directory.
 
 ## How to use it?
 
-Copy the `libs\` and `includes\` directories into the root of your project, and
+Copy the `libs/` and `includes/` directories into the root of your project, and
 make sure to compile your source code with the following flag:
 `gcc -L./libs -lft <your_code.c>`
 
