@@ -1,0 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/04 13:27:05 by jaleman           #+#    #+#             */
+/*   Updated: 2016/11/04 13:27:06 by jaleman          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "./includes/libft.h"
+
+/*
+** Outputs the char c to the file descriptor fd.
+*/
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
