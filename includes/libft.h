@@ -27,6 +27,15 @@ typedef struct		s_list
 }					t_list;
 
 /*
+** Define the bool typedef to use for older compilers.
+*/
+typedef enum		e_bool
+{
+	FALSE = 0,
+	TRUE = 1
+}					bool;
+
+/*
 ** Functions from stdlib.h
 */
 int					ft_atoi(const char *str);
