@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/libft.h"
+#include "libft.h"
 
 /*
 ** Allocates sufficient memory for a copy of the string s1, does the copy,

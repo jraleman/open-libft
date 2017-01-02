@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/libft.h"
+#include "libft.h"
 
 /*
 ** Sort the elements of an int array, by sort insertion.

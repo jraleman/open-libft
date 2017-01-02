@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/libft.h"
+#include "libft.h"
 
 /*
 ** Lexicographical comparison between s1 and s2 up to n char- acters or until a

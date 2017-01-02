@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/libft.h"
+#include "libft.h"
 
 /*
 ** Compares byte string s1 against byte string s2. Both strings are assumed
