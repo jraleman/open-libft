@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_array_sort_bubble.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 21:15:41 by jaleman           #+#    #+#             */
-/*   Updated: 2016/11/03 21:15:42 by jaleman          ###   ########.fr       */
+/*   Created: 2016/11/22 00:59:02 by jaleman           #+#    #+#             */
+/*   Updated: 2016/11/22 00:59:06 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Overwrites the bytes of a string (*s) to zeroes bytes, depending on the
-** value of the variable n. If the variable n is zero (0), then nothing
-** will happen.
+** Sort (in-place) the elements of an int array.
 */
 
-void	ft_bzero(void *s, size_t n)
+void	ft_array_sort_bubble(int *tab, unsigned int size)
 {
-	size_t		i;
+	int				tmp;
+	unsigned int 	i;
+	unsigned int 	j;
 
 	i = 0;
-	while (n--)
-		((unsigned char *)s)[i++] = '\0';
+	while (i < size - 1)
+	{
+		j = i;
+		while (j < size)
+		{
+			if (tab[i] > tab[j])
+			{
+				tmp = tab[i];
+				tab[i] = tab[j];
+				tab[j] = tmp;
+			}
+			j += 1;
+		}
+		i += 1;
+	}
 }

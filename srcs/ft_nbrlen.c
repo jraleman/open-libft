@@ -13,22 +13,22 @@
 #include "libft.h"
 
 /*
-** Finds the length of a number.
+** Finds the length of a number (depending of the base and the value).
 */
 
-size_t	ft_nbrlen(int nbr)
+size_t		ft_nbrlen(int nbr, int base)
 {
-	int		len;
+	size_t	len;
 
 	len = 0;
 	if (nbr == 0)
 		return (1);
-	if (nbr < 0)
+	if (nbr < 0 && base == 10)
 		len += 1;
-	while (nbr != 0)
+	while (nbr)
 	{
-		nbr = nbr / 10;
-		len++;
+		nbr /= base;
+		len += 1;
 	}
 	return (len);
 }

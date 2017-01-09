@@ -102,6 +102,11 @@ void				ft_putnbr(int n);
 double				ft_sqrt(double x);
 
 /*
+** Functions from 42 by type stdlib
+*/
+char				*ft_itoa_base(int value, int base)
+
+/*
 ** Functions from 42 by type string.
 */
 void				*ft_memalloc(size_t size);
@@ -149,7 +154,7 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 /*
 ** Useful functions created during 42 Piscine.
 */
-size_t				ft_nbrlen(int nbr);
+size_t				ft_nbrlen(int nbr, int base);
 int					ft_str_is_lowercase(char *str);
 int					ft_str_is_numeric(char *str);
 int					ft_str_is_printable(char *str);
@@ -174,6 +179,7 @@ int					*ft_array_remove_element(int *arr, size_t n, \
 int					*ft_array_sort_insertion(const int *arr, size_t n);
 int					*ft_array_rotate_left(int *arr, size_t n, unsigned int t);
 int					*ft_array_rotate_right(int *arr, size_t n, unsigned int t);
+void				ft_array_sort_bubble(int *tab, unsigned int size);
 int					ft_do_op(int nbr1, int nbr2, char op);
 char				*ft_program_name(char const *argv0);
 int					ft_str_is_palindrome(char *str);
