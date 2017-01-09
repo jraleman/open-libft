@@ -13,16 +13,16 @@
 #include "libft.h"
 
 /*
-** Makes every letter in the string uppercase.
+** Makes every letter in the string lowercase.
 */
 
-char	*ft_strupcase(char *str)
+char	*ft_str_to_lowcase(char *str)
 {
 	int		i;
 
 	i = 0;
 	while (str[i++])
-		if (ft_islower(str[i - 1]))
-			str[i - 1] -= 32;
+		if (ft_isupper(str[i - 1]))
+			str[i - 1] += 32;
 	return (str);
 }

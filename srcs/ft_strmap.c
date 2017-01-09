@@ -21,16 +21,13 @@
 char	*ft_strmap(const char *s, char (*f)(char))
 {
 	int		i;
-	size_t	len;
 	char	*str;
 
 	if (!s)
 		return (NULL);
-	i = 0;
-	len = ft_strlen(s);
-	str = (char *)malloc(sizeof(*s) * len + 1);
-	if (!str)
+	if (!(str = (char *)malloc(sizeof(char) * ft_strlen(s) + 1)))
 		return (NULL);
+	i = 0;
 	while (s[i])
 	{
 		str[i] = f(s[i]);

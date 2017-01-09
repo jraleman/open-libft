@@ -18,8 +18,6 @@
 
 int		ft_isxdigit(int c)
 {
-	if ((c >= '0' && '9' >= c) || (c >= 'a' && 'f' >= c) || \
-		(c >= 'A' && 'F' >= c))
-		return (1);
-	return (0);
+	return ((c >= '0' && '9' >= c) || (c >= 'a' && 'f' >= c) \
+			|| (c >= 'A' && 'F' >= c));
 }

@@ -26,9 +26,8 @@ char	*ft_itoa(int n)
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	n_size = ft_nbrlen(n, 10);
-	str = (char *)malloc(sizeof(char) * (n_size + 1));
-	if (str == 0)
-		return (0);
+	if (!(str = (char *)malloc(sizeof(char) * (n_size + 1))))
+		return (NULL);
 	str[n_size] = 0;
 	if (n < 0)
 	{

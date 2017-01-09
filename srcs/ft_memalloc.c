@@ -25,8 +25,7 @@ void	*ft_memalloc(size_t size)
 	ptr = NULL;
 	if (size)
 	{
-		ptr = (unsigned char *)malloc(size);
-		if (!ptr)
+		if (!(ptr = (unsigned char *)malloc(size)))
 			return (NULL);
 		while (size)
 			ptr[--size] = 0;

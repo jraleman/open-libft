@@ -18,7 +18,5 @@
 
 int		ft_ismathop(int c)
 {
-	if (c == '+' || c == '-' || c == '*' || c == '*' || c == '%')
-		return (1);
-	return (0);
+	return (c == '+' || c == '-' || c == '*' || c == '*' || c == '%');
 }

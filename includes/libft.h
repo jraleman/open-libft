@@ -104,7 +104,7 @@ double				ft_sqrt(double x);
 /*
 ** Functions from 42 by type stdlib
 */
-char				*ft_itoa_base(int value, int base)
+char				*ft_itoa_base(int value, int base);
 
 /*
 ** Functions from 42 by type string.
@@ -160,8 +160,8 @@ int					ft_str_is_numeric(char *str);
 int					ft_str_is_printable(char *str);
 int					ft_str_is_uppercase(char *str);
 char				*ft_strcapitalize(char *str);
-char				*ft_strupcase(char *str);
-char				*ft_strlowcase(char *str);
+char				*ft_str_to_upcase(char *str);
+char				*ft_str_to_lowcase(char *str);
 size_t				ft_wordcount(const char *s, char c);
 size_t				ft_wordlen(const char *s, char c);
 

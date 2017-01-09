@@ -1,9 +1,12 @@
 ## About the Libft
 
-This is a challenge where I build from scratch many of the standard functions
+Challenge where I build from scratch many of the standard functions
 of the Standard Library from the programming language C.
 I also include other functions that I have used throughout my academic career
 in École 42.
+
+All of these functions follows the applicable style guide standard (Norm) at
+WeThinkCode_. Read the `norminette.pdf` provided to learn more.
 
 ## How do to compile it?
 

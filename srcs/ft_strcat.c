@@ -21,17 +21,15 @@
 char	*ft_strcat(char *s1, const char *s2)
 {
 	unsigned int	i;
-	unsigned int	j;
+	unsigned int	len;
 
 	i = 0;
-	j = 0;
-	while (s1[i])
-		i += 1;
-	while (s2[j])
+	len = ft_strlen(s1);
+	while (s2[i])
 	{
-		s1[i + j] = s2[j];
-		j += 1;
+		s1[len + i] = s2[i];
+		i += 1;
 	}
-	s1[i + j] = '\0';
+	s1[len + i] = '\0';
 	return (s1);
 }
