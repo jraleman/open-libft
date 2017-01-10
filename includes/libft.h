@@ -33,7 +33,7 @@ typedef enum		e_bool
 {
 	FALSE = 0,
 	TRUE = 1
-}					bool;
+}					t_bool;
 
 /*
 ** Functions from stdlib.h

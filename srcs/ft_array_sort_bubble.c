@@ -19,8 +19,8 @@
 void	ft_array_sort_bubble(int *tab, unsigned int size)
 {
 	int				tmp;
-	unsigned int 	i;
-	unsigned int 	j;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
 	while (i < size - 1)

@@ -36,8 +36,10 @@ void	*ft_realloc(void *ptr, size_t size)
 			ft_strcpy(new_ptr, ptr);
 		}
 		else
+		{
 			if (!(new_ptr = (unsigned char *)malloc(sizeof(ptr) + 1)))
 				return (NULL);
+		}
 		free(ptr);
 		return (new_ptr);
 	}
