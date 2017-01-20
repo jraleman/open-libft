@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_max.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 13:27:05 by jaleman           #+#    #+#             */
-/*   Updated: 2016/11/04 13:27:06 by jaleman          ###   ########.fr       */
+/*   Created: 2017/01/17 15:19:55 by jaleman           #+#    #+#             */
+/*   Updated: 2017/01/17 15:19:56 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Allocates with malloc() and returns a “fresh” memory area. The memory
-** allocated is initialized to 0.
-** If the allocation fails, the function returns NULL.
+** Returns the max value between two integers arguments (x and y).
 */
 
-void	*ft_memalloc(size_t size)
+int		ft_max(int x, int y)
 {
-	unsigned char	*ptr;
-
-	ptr = NULL;
-	if (size)
-	{
-		if (!(ptr = (unsigned char *)malloc(size)))
-			return (NULL);
-		while (size)
-			ptr[--size] = 0;
-	}
-	return ((void *)ptr);
+	return (x > y ? x : y);
 }

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaleman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/10 05:06:13 by jaleman           #+#    #+#             */
 /*   Updated: 2016/12/10 05:06:13 by jaleman          ###   ########.fr       */
@@ -29,19 +29,19 @@ void	*ft_realloc(void *ptr, size_t size)
 
 	if (ptr)
 	{
-		if (!size)
+		if (size)
 		{
 			if (!(new_ptr = ft_strnew(size)))
 				return (NULL);
-			ft_strcpy(new_ptr, ptr);
+			ft_memcpy(new_ptr, ptr, size);
 		}
 		else
 		{
-			if (!(new_ptr = (unsigned char *)malloc(sizeof(ptr) + 1)))
+			if (!(new_ptr = (unsigned char *)malloc(sizeof(ptr))))
 				return (NULL);
 		}
 		free(ptr);
 		return (new_ptr);
 	}
-	return ((unsigned char *)malloc(sizeof(ptr) * size + 1));
+	return ((unsigned char *)malloc(sizeof(ptr) * size));
 }

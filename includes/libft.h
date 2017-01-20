@@ -13,8 +13,50 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+/*
+** Header files dependencies.
+*/
 # include <unistd.h>
 # include <stdlib.h>
+# include <wchar.h>
+# include <sys/types.h>
+
+/*
+** Attributes for printed text.
+*/
+# define RESET			0
+# define BOLD 			1
+# define DIM			2
+# define ITALICS 		3
+# define UNDERLINE		4
+# define REVERSE		7
+# define HIDDEN			8
+# define STROKE			9
+
+/*
+** Colors for printed text.
+*/
+# define BLACK 			0
+# define RED			1
+# define GREEN			2
+# define YELLOW			3
+# define BLUE			4
+# define MAGENTA		5
+# define CYAN			6
+# define WHITE			7
+
+/*
+** Macro functions.
+*/
+# define FT_MIN(x, y)			(x) < (y) ? (x) : (y)
+# define FT_MAX(x, y)			(x) > (y) ? (x) : (y)
+# define FT_ABS(x)				(((x) < 0) ? -(x) : (x))
+# define FT_ARR_SIZE(a)			(sizeof(a) / sizeof(a[0]))
+# define FT_SWAP(a, b)			({a ^= b; b ^= a; a ^= b;})
+# define FT_SQUARE(x)			(x * x)
+# define FT_BIT(x)				(1 << (x))
+# define FT_STRCMP(A, o, B)		(ft_strcmp((A), (B)) o 0)
+# define FT_MEMCMP(A, o, B)		(ft_memcmp((A), (B)) o 0)
 
 /*
 ** Define the structure called t_list, for ft_lst* function.
@@ -41,6 +83,7 @@ typedef enum		e_bool
 int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
 void				*ft_realloc(void *ptr, size_t size);
+void				*ft_calloc(size_t count, size_t size);
 
 /*
 ** Functions from strings.h
@@ -82,13 +125,13 @@ int					ft_isdigit(int c);
 int					ft_isgraph(int c);
 int					ft_islower(int c);
 int					ft_isspace(int c);
-int					ft_isxdigit(int c);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 int					ft_isprint(int c);
 int					ft_ispunct(int c);
 int					ft_isupper(int c);
 int					ft_islower(int c);
+int					ft_isxdigit(int c);
 
 /*
 ** Functions from stdio.h
@@ -102,12 +145,18 @@ void				ft_putnbr(int n);
 double				ft_sqrt(double x);
 
 /*
-** Functions from 42 by type stdlib
+** Functions from wchar.h
+*/
+void				ft_putwchar(wchar_t wc);
+size_t				ft_wcslen(const wchar_t *ws);
+
+/*
+** Functions from 42 by type stdlib.h
 */
 char				*ft_itoa_base(int value, int base);
 
 /*
-** Functions from 42 by type string.
+** Functions from 42 by type string.h
 */
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
@@ -126,7 +175,7 @@ char				*ft_strtrim(char const *s);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 
 /*
-** Functions from 42 by type stdio.
+** Functions from 42 by type stdio.h
 */
 void				ft_putchar_fd(char c, int fd);
 void				ft_putendl_fd(const char *s, int fd);
@@ -134,21 +183,36 @@ void				ft_putendl(const char *s);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr(const char *s);
 void				ft_putstr_fd(const char *s, int fd);
+void				ft_putnstr(char const *s, size_t len);
+void				ft_putnstr_fd(char const *str, size_t len, int fd);
 
 /*
-** Functions from 42 by type ctype.
+** Functions from 42 by type ctype.h
 */
 int					ft_iswspace(int c);
 int					ft_ismathop(int c);
 
 /*
-** Functions from 42 by type list.
+** Functions from 42 by type math.h
+*/
+int					ft_min(int x, int y);
+int					ft_min(int x, int y);
+
+/*
+** Functions from 42 by type wchar.h
+*/
+void				ft_putwchar_fd(wchar_t wc, int fd);
+void				ft_putwstr_fd(const wchar_t *ws, int fd);
+void				ft_putwstr(const wchar_t *ws);
+
+/*
+** Functions from 42 by type list.h
 */
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+t_list				*ft_lstnew(void const *content, size_t content_size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 /*
@@ -159,11 +223,11 @@ int					ft_str_is_lowercase(char *str);
 int					ft_str_is_numeric(char *str);
 int					ft_str_is_printable(char *str);
 int					ft_str_is_uppercase(char *str);
+size_t				ft_wordcount(const char *s, char c);
+size_t				ft_wordlen(const char *s, char c);
 char				*ft_strcapitalize(char *str);
 char				*ft_str_to_upcase(char *str);
 char				*ft_str_to_lowcase(char *str);
-size_t				ft_wordcount(const char *s, char c);
-size_t				ft_wordlen(const char *s, char c);
 
 /*
 ** Personal functions! :D
@@ -183,5 +247,6 @@ void				ft_array_sort_bubble(int *tab, unsigned int size);
 int					ft_do_op(int nbr1, int nbr2, char op);
 char				*ft_program_name(char const *argv0);
 int					ft_str_is_palindrome(char *str);
+void				ft_textcolor(int attr, int fg, int bg);
 
 #endif

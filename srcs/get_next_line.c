@@ -72,7 +72,7 @@ static	int			gnl_read_file(int fd, char *heap, char **stack, char **line)
 		if (gnl_verify_line(stack, line))
 			break ;
 	}
-	return (RET_VALUE(ret));
+	return (GNL_RET_VAL(ret));
 }
 
 /*

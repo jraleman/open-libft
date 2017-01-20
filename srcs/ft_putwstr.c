@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_putwstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 13:27:05 by jaleman           #+#    #+#             */
-/*   Updated: 2016/11/04 13:27:06 by jaleman          ###   ########.fr       */
+/*   Created: 2017/01/19 15:19:24 by jaleman           #+#    #+#             */
+/*   Updated: 2017/01/19 15:19:25 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Allocates with malloc() and returns a “fresh” memory area. The memory
-** allocated is initialized to 0.
-** If the allocation fails, the function returns NULL.
+** The function begins printing from the address specified (ws) until it reaches
+** the terminating null wide character.
+** This terminating null wide character is not printed to the standard output.
 */
 
-void	*ft_memalloc(size_t size)
+void	ft_putwstr(const wchar_t *ws)
 {
-	unsigned char	*ptr;
-
-	ptr = NULL;
-	if (size)
-	{
-		if (!(ptr = (unsigned char *)malloc(size)))
-			return (NULL);
-		while (size)
-			ptr[--size] = 0;
-	}
-	return ((void *)ptr);
+	while (*ws)
+		ft_putwchar(*ws++);
 }

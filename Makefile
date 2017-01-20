@@ -28,19 +28,19 @@ LFLAGS  += -I.
 AR      := ar rc
 RLIB    := ranlib
 
-all: obj $(LIBS)
+all:	obj $(LIBS)
 
 obj:
-	@mkdir -p $(OBJ_DIR)
+		@mkdir -p $(OBJ_DIR)
 
 $(LIBS): $(OBJS)
-	@mkdir -p $(LIB_DIR)
-	@$(AR) $(LIBS) $(OBJS)
-	@$(RLIB) $(LIBS)
-	@echo "[INFO] $(NAME) created!"
+		@mkdir -p $(LIB_DIR)
+		@$(AR) $(LIBS) $(OBJS)
+		@$(RLIB) $(LIBS)
+		@echo "[INFO] $(NAME) created!"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	$(CC) $(CFLAGS) -c $< -o $@ $(LFLAGS)/$(INCLS)
+		$(CC) $(CFLAGS) -c $< -o $@ $(LFLAGS)/$(INCLS)
 
 clean:
 		@rm -rf $(OBJS) $(OBJ_DIR)
@@ -52,4 +52,4 @@ fclean: clean
 
 re:		fclean all
 
-.PHONY: all clean fclean re
+.PHONY:	all clean fclean re

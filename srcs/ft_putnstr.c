@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_putnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 13:27:05 by jaleman           #+#    #+#             */
-/*   Updated: 2016/11/04 13:27:06 by jaleman          ###   ########.fr       */
+/*   Created: 2017/01/17 15:37:58 by jaleman           #+#    #+#             */
+/*   Updated: 2017/01/17 15:37:58 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Allocates with malloc() and returns a “fresh” memory area. The memory
-** allocated is initialized to 0.
-** If the allocation fails, the function returns NULL.
+** Outputs the string s to the standard output up to len number of characters.
+** If len is greater than the total len of the string s, it outputs the string
+** completely.
 */
 
-void	*ft_memalloc(size_t size)
+void	ft_putnstr(char const *s, size_t len)
 {
-	unsigned char	*ptr;
-
-	ptr = NULL;
-	if (size)
+	if (s)
 	{
-		if (!(ptr = (unsigned char *)malloc(size)))
-			return (NULL);
-		while (size)
-			ptr[--size] = 0;
+		ft_strlen(s) < len ? len = ft_strlen(s) : len;
+		write(1, s, len);
 	}
-	return ((void *)ptr);
 }

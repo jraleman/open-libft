@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_wcslen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 13:27:05 by jaleman           #+#    #+#             */
-/*   Updated: 2016/11/04 13:27:06 by jaleman          ###   ########.fr       */
+/*   Created: 2017/01/19 15:19:17 by jaleman           #+#    #+#             */
+/*   Updated: 2017/01/19 15:19:17 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Allocates with malloc() and returns a “fresh” memory area. The memory
-** allocated is initialized to 0.
-** If the allocation fails, the function returns NULL.
+** Compute the number of wide-character codes in the wide-character string to
+** which ws points, not including the terminating null wide-character code.
 */
 
-void	*ft_memalloc(size_t size)
+size_t	ft_wcslen(const wchar_t *ws)
 {
-	unsigned char	*ptr;
+	size_t		i;
 
-	ptr = NULL;
-	if (size)
+	i = 0;
+	while (*ws)
 	{
-		if (!(ptr = (unsigned char *)malloc(size)))
-			return (NULL);
-		while (size)
-			ptr[--size] = 0;
+		i += 1 * sizeof(*ws);
+		ws++;
 	}
-	return ((void *)ptr);
+	return (i);
 }
