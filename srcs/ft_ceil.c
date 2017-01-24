@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_array_remove_element.c                          :+:      :+:    :+:   */
+/*   ft_ceil.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
+/*   By: jaleman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 15:46:42 by jaleman           #+#    #+#             */
-/*   Updated: 2016/11/03 15:46:43 by jaleman          ###   ########.fr       */
+/*   Created: 2017/01/23 12:25:56 by jaleman           #+#    #+#             */
+/*   Updated: 2017/01/23 12:25:57 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Remove an element specified with the pos variable (index) from an int array.
+** Returns the smallest integral value greater than or equal to x.
 */
 
-int		*ft_array_remove_element(int *arr, size_t n, unsigned int pos)
+double		ft_ceil(double x)
 {
-	if (pos >= n)
-		return (arr);
-	while (pos++ < n)
-		arr[pos - 1] = arr[pos];
-	return (arr);
+	if (x < 0)
+		return ((int)x);
+	return (((int)x) + 1);
 }

@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_array_new.c                                     :+:      :+:    :+:   */
+/*   ft_hypotl.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 15:46:42 by jaleman           #+#    #+#             */
-/*   Updated: 2016/11/03 15:46:43 by jaleman          ###   ########.fr       */
+/*   Created: 2017/01/23 12:27:14 by jaleman           #+#    #+#             */
+/*   Updated: 2017/01/23 12:27:14 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Creates a new array with a specific set of numbers (by the argument size).
+** Computes in long, the sqrt(x*x+y*y) without undue overflow or underflow.
 */
 
-int		*ft_array_new(size_t size)
+long double		ft_hypotl(long double x, long double y)
 {
-	int		*arr;
-
-	if (!(arr = (int *)malloc(sizeof(int) * size + 1)))
-		return (0);
-	while (size)
-		arr[size--] = 0;
-	return (arr);
+	return (ft_sqrtl((x * x) + (y * y)));
 }

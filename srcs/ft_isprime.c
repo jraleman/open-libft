@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_isprime.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 21:15:41 by jaleman           #+#    #+#             */
-/*   Updated: 2016/11/03 21:15:42 by jaleman          ###   ########.fr       */
+/*   Created: 2017/01/23 14:28:58 by jaleman           #+#    #+#             */
+/*   Updated: 2017/01/23 14:28:59 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Overwrites the bytes of a string (*s) to zeroes bytes, depending on the
-** value of the variable n. If the variable n is zero (0), then nothing
-** will happen.
+** Checks if the number is a prime number.
 */
 
-void	ft_bzero(void *s, size_t n)
+int		ft_isprime(long unsigned int nbr)
 {
-	size_t		i;
+	unsigned long int	i;
 
-	i = 0;
-	while (n--)
-		((unsigned char *)s)[i++] = 0;
+	if (!nbr)
+		return (0);
+	i = 1;
+	while (++i <= nbr)
+	{
+		if (!(nbr % i))
+			break ;
+	}
+	if (i == nbr)
+		return (1);
+	return (0);
 }

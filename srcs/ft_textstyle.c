@@ -21,9 +21,9 @@
 ** Colors: BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE
 */
 
-void	ft_textcolor(int attr, int fg, int bg)
+void	ft_textstyle(int attr, int fg, int bg)
 {
-	ft_putstr("\x1B");
+	ft_putstr("\x1B[");
 	ft_putnbr(attr);
 	ft_putnbr(fg + 30);
 	ft_putnbr(bg + 40);

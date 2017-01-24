@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_arr_sort_insrt.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 21:15:41 by jaleman           #+#    #+#             */
-/*   Updated: 2016/11/03 21:15:42 by jaleman          ###   ########.fr       */
+/*   Created: 2016/11/03 15:46:42 by jaleman           #+#    #+#             */
+/*   Updated: 2016/11/03 15:46:43 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Overwrites the bytes of a string (*s) to zeroes bytes, depending on the
-** value of the variable n. If the variable n is zero (0), then nothing
-** will happen.
+** Sort the elements of an int array by insertion.
 */
 
-void	ft_bzero(void *s, size_t n)
+void	ft_arr_sort_insrt(int *arr, size_t size)
 {
-	size_t		i;
+	int		i;
+	int		j;
+	int		current;
 
 	i = 0;
-	while (n--)
-		((unsigned char *)s)[i++] = 0;
+	j = 0;
+	while ((unsigned int)i < size)
+	{
+		current = arr[i];
+		j = i - 1;
+		while (j >= 0 && (arr[j] > current))
+		{
+			arr[j + 1] = arr[j];
+			j -= 1;
+		}
+		arr[j + 1] = current;
+		i += 1;
+	}
 }

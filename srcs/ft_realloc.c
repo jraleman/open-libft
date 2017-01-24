@@ -31,8 +31,9 @@ void	*ft_realloc(void *ptr, size_t size)
 	{
 		if (size)
 		{
-			if (!(new_ptr = ft_strnew(size)))
+			if (!(new_ptr = ft_memalloc(size)))
 				return (NULL);
+			ft_bzero(new_ptr, size);
 			ft_memcpy(new_ptr, ptr, size);
 		}
 		else

@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_floorl.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 21:15:41 by jaleman           #+#    #+#             */
-/*   Updated: 2016/11/03 21:15:42 by jaleman          ###   ########.fr       */
+/*   Created: 2017/01/23 12:26:54 by jaleman           #+#    #+#             */
+/*   Updated: 2017/01/23 12:26:55 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Overwrites the bytes of a string (*s) to zeroes bytes, depending on the
-** value of the variable n. If the variable n is zero (0), then nothing
-** will happen.
+** Returns the largest integral value less than or equal to x
 */
 
-void	ft_bzero(void *s, size_t n)
+long double		ft_floorl(long double x)
 {
-	size_t		i;
-
-	i = 0;
-	while (n--)
-		((unsigned char *)s)[i++] = 0;
+	if (x > 0)
+		return ((long int)x);
+	return (((long int)x) - 1);
 }

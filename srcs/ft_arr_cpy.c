@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_array_rotate_right.c                            :+:      :+:    :+:   */
+/*   ft_arr_cpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,33 +13,20 @@
 #include "libft.h"
 
 /*
-** Rotate the elements to the right of an array, by how many position defined
-** in the tms variable. If the tms variable is greater than the number of
-** elements, it's going to be trimed down to the next min value.
-** For example, we have an array with three (3) elements, and we say that we
-** want to rotate it 5 times. tms will be trimed to 2 times (5 - 3 = 2), and
-** then we rotate it 2 times only.
+** Copy the content of an int array to another one.
 */
 
-int		*ft_array_rotate_right(int *arr, size_t n, unsigned int tms)
+int		*ft_arr_cpy(const int *arr, size_t size)
 {
-	int		first;
-	size_t	i;
+	int				*cpy;
+	unsigned int	i;
 
-	if (!tms || !arr)
-		return (arr);
-	first = arr[n - 1];
-	i = n;
-	while (tms > n)
-		tms -= n;
-	while (i)
+	cpy = ft_arr_new(size);
+	i = 0;
+	while (i < size)
 	{
-		arr[i] = arr[i - 1];
-		i -= 1;
+		cpy[i] = arr[i];
+		i += 1;
 	}
-	arr[i] = first;
-	tms -= 1;
-	if (tms)
-		ft_array_rotate_right(arr, n, tms);
-	return (arr);
+	return (cpy);
 }

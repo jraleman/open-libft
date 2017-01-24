@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_arr_elem_rptd.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 21:15:41 by jaleman           #+#    #+#             */
-/*   Updated: 2016/11/03 21:15:42 by jaleman          ###   ########.fr       */
+/*   Created: 2016/11/03 15:46:42 by jaleman           #+#    #+#             */
+/*   Updated: 2016/11/03 15:46:43 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Overwrites the bytes of a string (*s) to zeroes bytes, depending on the
-** value of the variable n. If the variable n is zero (0), then nothing
-** will happen.
+** Will return the number of elements repeated in an int array.
 */
 
-void	ft_bzero(void *s, size_t n)
+int		ft_arr_elem_rptd(int *arr, size_t size)
 {
-	size_t		i;
+	int		i;
+	int		j;
+	int		cnt;
 
-	i = 0;
-	while (n--)
-		((unsigned char *)s)[i++] = 0;
+	i = -1;
+	cnt = 0;
+	if (size < 1)
+		return (0);
+	while ((unsigned int)++i < size)
+	{
+		j = i + 1;
+		while ((unsigned int)j < size)
+			if (arr[i] == arr[j++])
+				cnt += 1;
+	}
+	return (cnt);
 }

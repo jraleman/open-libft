@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strtok.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 21:15:41 by jaleman           #+#    #+#             */
-/*   Updated: 2016/11/03 21:15:42 by jaleman          ###   ########.fr       */
+/*   Created: 2017/01/23 11:53:33 by jaleman           #+#    #+#             */
+/*   Updated: 2017/01/23 11:53:34 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Overwrites the bytes of a string (*s) to zeroes bytes, depending on the
-** value of the variable n. If the variable n is zero (0), then nothing
-** will happen.
-*/
-
-void	ft_bzero(void *s, size_t n)
+char	*ft_strtok(char *str, const char delim)
 {
-	size_t		i;
+	static char		*stock = NULL;
+	char			*ptr;
+	int				flg;
 
-	i = 0;
-	while (n--)
-		((unsigned char *)s)[i++] = 0;
+	flg = 0;
+	ptr = NULL;
+	if (str != NULL)
+		stock = ft_strdup(str);
+	while (*stock != '\0')
+	{
+		if (flg == 0 && *stock != delim)
+		{
+			flg = 1;
+			ptr = stock;
+		}
+		else if (flg == 1 && *stock == delim)
+		{
+			*stock = '\0';
+			stock += 1;
+			break ;
+		}
+		stock += 1;
+	}
+	return (ptr);
 }

@@ -1,41 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_array_sort_bubble.c                             :+:      :+:    :+:   */
+/*   ft_roundl.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/22 00:59:02 by jaleman           #+#    #+#             */
-/*   Updated: 2016/11/22 00:59:06 by jaleman          ###   ########.fr       */
+/*   Created: 2017/01/23 12:26:59 by jaleman           #+#    #+#             */
+/*   Updated: 2017/01/23 12:27:01 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Sort (in-place) the elements of an int array.
+** Need not raise the "inexact" floating-point exception for non-integer
+** arguments that round to within the range of the return type.
 */
 
-void	ft_array_sort_bubble(int *tab, unsigned int size)
+long double		ft_roundl(long double x)
 {
-	int				tmp;
-	unsigned int	i;
-	unsigned int	j;
-
-	i = 0;
-	while (i < size - 1)
-	{
-		j = i;
-		while (j < size)
-		{
-			if (tab[i] > tab[j])
-			{
-				tmp = tab[i];
-				tab[i] = tab[j];
-				tab[j] = tmp;
-			}
-			j += 1;
-		}
-		i += 1;
-	}
+	return ((long int)(x + 0.5));
 }

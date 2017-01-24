@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_textstyle_reset.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 21:15:41 by jaleman           #+#    #+#             */
-/*   Updated: 2016/11/03 21:15:42 by jaleman          ###   ########.fr       */
+/*   Created: 2017/01/23 12:22:51 by jaleman           #+#    #+#             */
+/*   Updated: 2017/01/23 12:22:53 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Overwrites the bytes of a string (*s) to zeroes bytes, depending on the
-** value of the variable n. If the variable n is zero (0), then nothing
-** will happen.
+** Reset the attributes and colors of the printed text.
 */
 
-void	ft_bzero(void *s, size_t n)
+void	ft_textstyle_reset(void)
 {
-	size_t		i;
-
-	i = 0;
-	while (n--)
-		((unsigned char *)s)[i++] = 0;
+	ft_putstr("\x1B[03040m");
 }

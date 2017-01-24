@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_array_element_repeated.c                        :+:      :+:    :+:   */
+/*   ft_powl.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 15:46:42 by jaleman           #+#    #+#             */
-/*   Updated: 2016/11/03 15:46:43 by jaleman          ###   ########.fr       */
+/*   Created: 2017/01/23 12:27:21 by jaleman           #+#    #+#             */
+/*   Updated: 2017/01/23 12:27:22 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Will return the number of elements repeated in an int array.
+** Returns in long, +-infinity and raises the "divide-by-zero" floating-point
+** exception for y an odd integer < 0.
 */
 
-size_t		ft_array_element_repeated(int *arr, size_t n)
+long double		ft_powl(long double x, long int y)
 {
-	size_t	i;
-	size_t	j;
-	size_t	cnt;
+	long double z;
 
-	i = -1;
-	cnt = 0;
-	if (n < 1)
-		return (0);
-	while (++i < n)
+	z = 1.0;
+	while (y > 0)
 	{
-		j = i + 1;
-		while (j < n)
-			if (arr[i] == arr[j++])
-				cnt += 1;
+		while (!(y & 1))
+		{
+			y >>= 2;
+			x *= x;
+		}
+		--y;
+		z = x * z;
 	}
-	return (cnt);
+	return (z);
 }

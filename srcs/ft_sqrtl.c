@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_sqrtl.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 21:15:41 by jaleman           #+#    #+#             */
-/*   Updated: 2016/11/03 21:15:42 by jaleman          ###   ########.fr       */
+/*   Created: 2017/01/23 12:27:32 by jaleman           #+#    #+#             */
+/*   Updated: 2017/01/23 12:27:33 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Overwrites the bytes of a string (*s) to zeroes bytes, depending on the
-** value of the variable n. If the variable n is zero (0), then nothing
-** will happen.
+** Compute in long, the non-negative square root of x.
+** If x is negative, the function wil return zero (0).
 */
 
-void	ft_bzero(void *s, size_t n)
+long double		ft_sqrtl(long double x)
 {
-	size_t		i;
+	long double	i;
 
-	i = 0;
-	while (n--)
-		((unsigned char *)s)[i++] = 0;
+	i = 1.0;
+	if (x < 0)
+		return (0);
+	while (i * i < x)
+		i += 1;
+	return (i);
 }

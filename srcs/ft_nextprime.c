@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_array_copy.c                                    :+:      :+:    :+:   */
+/*   ft_nextprime.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 15:46:42 by jaleman           #+#    #+#             */
-/*   Updated: 2016/11/03 15:46:43 by jaleman          ###   ########.fr       */
+/*   Created: 2017/01/23 14:40:30 by jaleman           #+#    #+#             */
+/*   Updated: 2017/01/23 14:40:30 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Copy the content of an int array to another one.
+** Gives the smallest prime large number after nbr.
 */
 
-int		*ft_array_copy(const int *arr, size_t n)
+long unsigned int	ft_nextprime(long unsigned int nbr)
 {
-	int		*cpy;
-	size_t	i;
-
-	cpy = ft_array_new(n);
-	i = 0;
-	while (i < n)
+	nbr += 1;
+	while (!ft_isprime(nbr))
 	{
-		cpy[i] = arr[i];
-		i += 1;
+		nbr++;
 	}
-	return (cpy);
+	return (nbr);
 }

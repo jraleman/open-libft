@@ -13,15 +13,15 @@
 #include "libft.h"
 
 /*
-** Compute the non-negative square root of x. If x is negative, the function
-** wil return zero (0).
+** Compute the non-negative square root of x.
+** If x is negative, the function wil return zero (0).
 */
 
 double		ft_sqrt(double x)
 {
-	long	i;
+	double	i;
 
-	i = 1;
+	i = 1.0;
 	if (x < 0)
 		return (0);
 	while (i * i < x)
