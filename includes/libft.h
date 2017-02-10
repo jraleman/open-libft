@@ -24,62 +24,62 @@
 /*
 ** Attributes for printed text.
 */
-# define RESET		0
-# define BOLD 		1
-# define DIM		2
-# define ITALICS 	3
-# define UNDERLINE	4
-# define REVERSE	7
-# define HIDDEN		8
-# define STROKE		9
+# define RESET		(0)
+# define BOLD		(1)
+# define DIM		(2)
+# define ITALICS	(3)
+# define UNDERLINE	(4)
+# define REVERSE	(7)
+# define HIDDEN		(8)
+# define STROKE		(9)
 
 /*
 ** Colors for printed text.
 */
-# define BLACK 		0
-# define RED		1
-# define GREEN		2
-# define YELLOW		3
-# define BLUE		4
-# define MAGENTA	5
-# define CYAN		6
-# define WHITE		7
+# define BLACK		(0)
+# define RED		(1)
+# define GREEN		(2)
+# define YELLOW		(3)
+# define BLUE		(4)
+# define MAGENTA	(5)
+# define CYAN		(6)
+# define WHITE		(7)
 
 /*
 ** Math constants.
 */
-# define M_E			2.7182818284590452354
-# define M_LOG2E		1.4426950408889634074
-# define M_LOG10E		0.43429448190325182765
-# define M_LN2			0.69314718055994530942
-# define M_LN10			2.30258509299404568402
-# define M_PI			3.14159265358979323846
-# define M_PI_2			1.57079632679489661923
-# define M_PI_4			0.78539816339744830962
-# define M_1_PI			0.31830988618379067154
-# define M_2_PI			0.63661977236758134308
-# define M_2_SQRTPI		1.12837916709551257390
-# define M_SQRT2		1.41421356237309504880
-# define M_SQRT1_2		0.70710678118654752440
+# define M_E			(2.71828182845904523540)
+# define M_LOG2E		(1.44269504088896340740)
+# define M_LOG10E		(0.43429448190325182765)
+# define M_LN2			(0.69314718055994530942)
+# define M_LN10			(2.30258509299404568402)
+# define M_PI			(3.14159265358979323846)
+# define M_PI_2			(1.57079632679489661923)
+# define M_PI_4			(0.78539816339744830962)
+# define M_1_PI			(0.31830988618379067154)
+# define M_2_PI			(0.63661977236758134308)
+# define M_2_SQRTPI		(1.12837916709551257390)
+# define M_SQRT2		(1.41421356237309504880)
+# define M_SQRT1_2		(0.70710678118654752440)
 
 /*
 ** Macros for the limits of the variables.
 */
-# define CHAR_BIT		8
-# define MB_LEN_MAX		1
-# define SCHAR_MIN		-128
-# define SCHAR_MAX		127
-# define UCHAR_MAX		255
-# define CHAR_MIN		-128
-# define CHAR_MAX		127
-# define SHRT_MIN		-32768
-# define SHRT_MAX		32767
-# define USHRT_MAX		65535
-# define INT_MIN		-2147483648
-# define INT_MAX		2147483647
-# define LONG_MIN		-9223372036854775808
-# define LONG_MAX		9223372036854775807
-# define ULONG_MAX		18446744073709551615
+# define CHAR_BIT		(8)
+# define MB_LEN_MAX		(1)
+# define SCHAR_MIN		(-128)
+# define SCHAR_MAX		(127)
+# define UCHAR_MAX		(255)
+# define CHAR_MIN		(-128)
+# define CHAR_MAX		(127)
+# define SHRT_MIN		(-32768)
+# define SHRT_MAX		(32767)
+# define USHRT_MAX		(65535)
+# define INT_MIN		(-2147483648)
+# define INT_MAX		(2147483647)
+# define LONG_MIN		(-9223372036854775808)
+# define LONG_MAX		(9223372036854775807)
+# define ULONG_MAX		(18446744073709551615)
 
 /*
 ** Macro functions.
