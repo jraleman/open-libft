@@ -19,6 +19,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <wchar.h>
+# include <stdint.h>
 # include <sys/types.h>
 
 /*
