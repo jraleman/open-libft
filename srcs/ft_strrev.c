@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+** Function that reverses (in-place) a string.
+*/
+
 char		*ft_strrev(const char *str)
 {
 	char	*end;
