@@ -23,12 +23,16 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 	size_t	i;
 
 	i = 0;
-	while ((i < len) && src[i])
+	while (i < n && src[i])
 	{
 		dst[i] = src[i];
-		i += 1;
+		i++;
 	}
-	while (i < len)
-		dst[i++] = '\0';
+	dst[i] = '\0';
+	while (i < n)
+	{
+		dst[i] = '\0';
+		i++;
+	}
 	return (dst);
 }
