@@ -147,6 +147,7 @@ char				*ft_strnew(size_t size);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strmap(const char *s, char (*f)(char));
 char				*ft_strmapi(const char *s, char (*f)(unsigned int, char));
+char				*ft_strrev(const char *str);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strtrim(char const *s);
 char				*ft_strtok(char *str, const char delim);
