@@ -49,7 +49,7 @@ static int	wchar_utf8(wchar_t wc, char *convertion)
 ** standard output.
 */
 
-int		ft_putwchar(wchar_t wc)
+int			ft_putwchar(wchar_t wc)
 {
 	int		len;
 	char	convertion[4];
