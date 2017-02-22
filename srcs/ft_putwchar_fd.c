@@ -13,30 +13,48 @@
 #include "libft.h"
 
 /*
-** Writes the character corresponding to the wide-character code wc to the
-** file descriptor.
+** The encoding is variable-length and uses 8-bit code units.
 */
 
-void	ft_putwchar_fd(wchar_t wc, int fd)
+static int	wchar_utf8(wchar_t wc, char *convertion)
 {
-	if (wc < FT_BIT(7))
-		ft_putchar_fd(wc, fd);
-	else if (wc < FT_BIT(11))
+	int		len;
+
+	len = 0;
+	if (wc <= 0xFF)
+		convertion[len++] = wc;
+	else if (wc < 0x0800)
 	{
-		ft_putchar_fd((wc >> 6) + 0xC0, fd);
-		ft_putchar_fd((wc & 0x3F) + 0x80, fd);
+		convertion[len++] = ((wc >> 6) & 0x1F) | 0xC0;
+		convertion[len++] = ((wc >> 0) & 0x3F) | 0x80;
 	}
-	else if (wc < FT_BIT(16))
+	else if (wc < 0x010000)
 	{
-		ft_putchar_fd((wc >> 12) + 0xE0, fd);
-		ft_putchar_fd(((wc >> 6) & 0x3F) + 0x80, fd);
-		ft_putchar_fd((wc & 0x3F) + 0x80, fd);
+		convertion[len++] = ((wc >> 12) & 0x0F) | 0xE0;
+		convertion[len++] = ((wc >> 6) & 0x3F) | 0x80;
+		convertion[len++] = ((wc >> 0) & 0x3F) | 0x80;
 	}
-	else if (wc < FT_BIT(16) + FT_BIT(20))
+	else if (wc < 0x110000)
 	{
-		ft_putchar_fd((wc >> 18) + 0xF0, fd);
-		ft_putchar_fd(((wc >> 12) & 0x3F) + 0x80, fd);
-		ft_putchar_fd(((wc >> 6) & 0x3F) + 0x80, fd);
-		ft_putchar_fd((wc & 0x3F) + 0x80, fd);
+		convertion[len++] = ((wc >> 18) & 0x07) | 0xF0;
+		convertion[len++] = ((wc >> 12) & 0x3F) | 0x80;
+		convertion[len++] = ((wc >> 6) & 0x3F) | 0x80;
+		convertion[len++] = ((wc >> 0) & 0x3F) | 0x80;
 	}
+	return (len);
+}
+
+/*
+** Writes the character corresponding to the wide-character code wc to the
+** standard output.
+*/
+
+int		ft_putwchar_fd(wchar_t wc, int fd)
+{
+	int		len;
+	char	convertion[4];
+
+	len = wchar_utf8(wc, convertion);
+	write(fd, convertion, len);
+	return (len);
 }

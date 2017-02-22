@@ -12,23 +12,6 @@
 
 #include "libft.h"
 
-
-
-
-
-COMPARE FUCNTIUON MAKE IN A FILE
-
-
-
-
-
-
-
-int cmpfunc (const void * a, const void * b)
-{
-   return ( *(int*)a - *(int*)b );
-}
-
 int		main(void)
 {
 	int		array[] = {34, 42, 2, 67, 2};

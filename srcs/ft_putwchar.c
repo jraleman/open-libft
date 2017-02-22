@@ -5,38 +5,56 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/17 15:48:06 by jaleman           #+#    #+#             */
-/*   Updated: 2017/01/17 15:48:07 by jaleman          ###   ########.fr       */
+/*   Created: 2017/02/19 07:50:32 by jaleman           #+#    #+#             */
+/*   Updated: 2017/02/19 07:50:33 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
+** The encoding is variable-length and uses 8-bit code units.
+*/
+
+static int	wchar_utf8(wchar_t wc, char *convertion)
+{
+	int		len;
+
+	len = 0;
+	if (wc <= 0xFF)
+		convertion[len++] = wc;
+	else if (wc < 0x0800)
+	{
+		convertion[len++] = ((wc >> 6) & 0x1F) | 0xC0;
+		convertion[len++] = ((wc >> 0) & 0x3F) | 0x80;
+	}
+	else if (wc < 0x010000)
+	{
+		convertion[len++] = ((wc >> 12) & 0x0F) | 0xE0;
+		convertion[len++] = ((wc >> 6) & 0x3F) | 0x80;
+		convertion[len++] = ((wc >> 0) & 0x3F) | 0x80;
+	}
+	else if (wc < 0x110000)
+	{
+		convertion[len++] = ((wc >> 18) & 0x07) | 0xF0;
+		convertion[len++] = ((wc >> 12) & 0x3F) | 0x80;
+		convertion[len++] = ((wc >> 6) & 0x3F) | 0x80;
+		convertion[len++] = ((wc >> 0) & 0x3F) | 0x80;
+	}
+	return (len);
+}
+
+/*
 ** Writes the character corresponding to the wide-character code wc to the
 ** standard output.
 */
 
-void	ft_putwchar(wchar_t wc)
+int		ft_putwchar(wchar_t wc)
 {
-	if (wc < FT_BIT(7))
-		ft_putchar(wc);
-	else if (wc < FT_BIT(11))
-	{
-		ft_putchar((wc >> 6) + 0xC0);
-		ft_putchar((wc & 0x3F) + 0x80);
-	}
-	else if (wc < FT_BIT(16))
-	{
-		ft_putchar((wc >> 12) + 0xE0);
-		ft_putchar(((wc >> 6) & 0x3F) + 0x80);
-		ft_putchar((wc & 0x3F) + 0x80);
-	}
-	else if (wc < FT_BIT(16) + FT_BIT(20))
-	{
-		ft_putchar((wc >> 18) + 0xF0);
-		ft_putchar(((wc >> 12) & 0x3F) + 0x80);
-		ft_putchar(((wc >> 6) & 0x3F) + 0x80);
-		ft_putchar((wc & 0x3F) + 0x80);
-	}
+	int		len;
+	char	convertion[4];
+
+	len = wchar_utf8(wc, convertion);
+	write(1, convertion, len);
+	return (len);
 }

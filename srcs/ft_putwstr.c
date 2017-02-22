@@ -5,21 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/19 15:19:24 by jaleman           #+#    #+#             */
-/*   Updated: 2017/01/19 15:19:25 by jaleman          ###   ########.fr       */
+/*   Created: 2017/02/19 07:52:18 by jaleman           #+#    #+#             */
+/*   Updated: 2017/02/19 07:52:19 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** The function begins printing from the address specified (ws) until it reaches
-** the terminating null wide character.
+** The function begins printing from the address specified (wcs) until it
+** reaches the terminating null wide character.
 ** This terminating null wide character is not printed to the standard output.
 */
 
-void	ft_putwstr(const wchar_t *ws)
+int		ft_putwstr(wchar_t *wcs)
 {
-	while (*ws)
-		ft_putwchar(*ws++);
+	int		len;
+
+	len = 0;
+	while (*wcs)
+	{
+		ft_putwchar(*wcs);
+		len += ft_wclen(*wcs);
+		wcs += 1;
+	}
+	return (len);
 }

@@ -203,12 +203,14 @@ int					ft_str_is_palindrome(char *str);
 */
 void				ft_putchar(char c);
 void				ft_putchar_fd(char c, int fd);
+void				ft_putnchar(char c, int n);
 void				ft_putstr(const char *s);
 void				ft_putstr_fd(const char *s, int fd);
 void				ft_putendl(const char *s);
 void				ft_putendl_fd(const char *s, int fd);
 void				ft_putnbr(int n);
 void				ft_putnbr_fd(int n, int fd);
+void				ft_putunbr(uintmax_t n);
 void				ft_putnstr(char const *s, size_t len);
 void				ft_putnstr_fd(char const *str, size_t len, int fd);
 
@@ -239,11 +241,16 @@ size_t				ft_nbrlen(int nbr, int base);
 /*
 ** Functions by type wchar.h
 */
-void				ft_putwchar(wchar_t wc);
-void				ft_putwchar_fd(wchar_t wc, int fd);
-void				ft_putwstr(const wchar_t *ws);
-void				ft_putwstr_fd(const wchar_t *ws, int fd);
-size_t				ft_wcslen(const wchar_t *ws);
+int					ft_wclen(wchar_t wchar);
+int					ft_putwchar(wchar_t wc);
+int					ft_putwchar_fd(wchar_t wc, int fd);
+int					ft_putwstr(wchar_t *ws);
+int					ft_putwstr_fd(wchar_t *ws, int fd);
+size_t				ft_wcslen(wchar_t *ws);
+wchar_t				*ft_wcsdup(wchar_t *src);
+wchar_t				*ft_wcscpy(wchar_t *dst, const wchar_t *src);
+wchar_t				*ft_wcsnew(size_t size);
+wchar_t				*ft_wcsncpy(wchar_t *dst, const wchar_t *src, size_t n);
 
 /*
 ** Functions by type list.h

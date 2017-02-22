@@ -18,7 +18,7 @@
 ** with `\0' characters. Otherwise, dst is not terminated.
 */
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+char	*ft_strncpy(char *dst, const char *src, size_t n)
 {
 	size_t	i;
 

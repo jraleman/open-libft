@@ -18,8 +18,16 @@
 ** This terminating null wide character is not printed to the file descriptor.
 */
 
-void	ft_putwstr_fd(const wchar_t *ws, int fd)
+int		ft_putwstr_fd(wchar_t *wcs, int fd)
 {
-	while (*ws)
-		ft_putwchar_fd(*ws++, fd);
+	int		len;
+
+	len = 0;
+	while (*wcs)
+	{
+		ft_putwchar_fd(*wcs, fd);
+		len += ft_wclen(*wcs);
+		wcs += 1;
+	}
+	return (len);
 }
