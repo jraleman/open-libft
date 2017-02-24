@@ -16,6 +16,7 @@
 /*
 ** Header files dependencies.
 */
+
 # include <unistd.h>
 # include <stdlib.h>
 # include <wchar.h>
@@ -25,79 +26,85 @@
 /*
 ** Attributes for printed text.
 */
-# define RESET		(0)
-# define BOLD		(1)
-# define DIM		(2)
-# define ITALICS	(3)
-# define UNDERLINE	(4)
-# define REVERSE	(7)
-# define HIDDEN		(8)
-# define STROKE		(9)
+
+# define RESET				(0)
+# define BOLD				(1)
+# define DIM				(2)
+# define ITALICS			(3)
+# define UNDERLINE			(4)
+# define REVERSE			(7)
+# define HIDDEN				(8)
+# define STROKE				(9)
 
 /*
 ** Colors for printed text.
 */
-# define BLACK		(0)
-# define RED		(1)
-# define GREEN		(2)
-# define YELLOW		(3)
-# define BLUE		(4)
-# define MAGENTA	(5)
-# define CYAN		(6)
-# define WHITE		(7)
 
-/*
-** Math constants.
-*/
-# define M_E			(2.71828182845904523540)
-# define M_LOG2E		(1.44269504088896340740)
-# define M_LOG10E		(0.43429448190325182765)
-# define M_LN2			(0.69314718055994530942)
-# define M_LN10			(2.30258509299404568402)
-# define M_PI			(3.14159265358979323846)
-# define M_PI_2			(1.57079632679489661923)
-# define M_PI_4			(0.78539816339744830962)
-# define M_1_PI			(0.31830988618379067154)
-# define M_2_PI			(0.63661977236758134308)
-# define M_2_SQRTPI		(1.12837916709551257390)
-# define M_SQRT2		(1.41421356237309504880)
-# define M_SQRT1_2		(0.70710678118654752440)
+# define BLACK				(0)
+# define RED				(1)
+# define GREEN				(2)
+# define YELLOW				(3)
+# define BLUE				(4)
+# define MAGENTA			(5)
+# define CYAN				(6)
+# define WHITE				(7)
 
 /*
 ** Macros for the limits of the variables.
 */
-# define CHAR_BIT		(8)
-# define MB_LEN_MAX		(1)
-# define SCHAR_MIN		(-128)
-# define SCHAR_MAX		(127)
-# define UCHAR_MAX		(255)
-# define CHAR_MIN		(-128)
-# define CHAR_MAX		(127)
-# define SHRT_MIN		(-32768)
-# define SHRT_MAX		(32767)
-# define USHRT_MAX		(65535)
-# define INT_MIN		(-2147483648)
-# define INT_MAX		(2147483647)
-# define LONG_MIN		(-9223372036854775808)
-# define LONG_MAX		(9223372036854775807)
-# define ULONG_MAX		(18446744073709551615)
+
+# define CHAR_BIT			(8)
+# define MB_LEN_MAX			(1)
+# define SCHAR_MIN			(-128)
+# define SCHAR_MAX			(127)
+# define UCHAR_MAX			(255)
+# define CHAR_MIN			(-128)
+# define CHAR_MAX			(127)
+# define SHRT_MIN			(-32768)
+# define SHRT_MAX			(32767)
+# define USHRT_MAX			(65535)
+# define INT_MIN			(-2147483648)
+# define INT_MAX			(2147483647)
+# define LONG_MIN			(-9223372036854775808)
+# define LONG_MAX			(9223372036854775807)
+# define ULONG_MAX			(18446744073709551615)
+
+/*
+** Macro math constants.
+*/
+
+# define M_E				(2.71828182845904523540)
+# define M_LOG2E			(1.44269504088896340740)
+# define M_LOG10E			(0.43429448190325182765)
+# define M_LN2				(0.69314718055994530942)
+# define M_LN10				(2.30258509299404568402)
+# define M_PI				(3.14159265358979323846)
+# define M_PI_2				(1.57079632679489661923)
+# define M_PI_4				(0.78539816339744830962)
+# define M_1_PI				(0.31830988618379067154)
+# define M_2_PI				(0.63661977236758134308)
+# define M_2_SQRTPI			(1.12837916709551257390)
+# define M_SQRT2			(1.41421356237309504880)
+# define M_SQRT1_2			(0.70710678118654752440)
 
 /*
 ** Macro functions.
 */
-# define FT_MIN(x, y)			(x) < (y) ? (x) : (y)
-# define FT_MAX(x, y)			(x) > (y) ? (x) : (y)
-# define FT_ABS(x)				(((x) < 0) ? -(x) : (x))
-# define FT_ARR_SIZE(a)			(sizeof(a) / sizeof(a[0]))
-# define FT_SWAP(a, b)			({a ^= b; b ^= a; a ^= b;})
-# define FT_SQUARE(x)			(x * x)
-# define FT_BIT(x)				(1 << (x))
-# define FT_STRCMP(A, o, B)		(ft_strcmp((A), (B)) o 0)
-# define FT_MEMCMP(A, o, B)		(ft_memcmp((A), (B)) o 0)
+
+# define FT_MIN(x, y)		(x) < (y) ? (x) : (y)
+# define FT_MAX(x, y)		(x) > (y) ? (x) : (y)
+# define FT_ABS(x)			(((x) < 0) ? -(x) : (x))
+# define FT_ARR_SIZE(a)		(sizeof(a) / sizeof(a[0]))
+# define FT_SWAP(a, b)		({a ^= b; b ^= a; a ^= b;})
+# define FT_SQUARE(x)		(x * x)
+# define FT_BIT(x)			(1 << (x))
+# define FT_STRCMP(A, o, B)	(ft_strcmp((A), (B)) o 0)
+# define FT_MEMCMP(A, o, B)	(ft_memcmp((A), (B)) o 0)
 
 /*
 ** Define the structure called t_list, for ft_lst* function.
 */
+
 typedef struct		s_list
 {
 	void			*content;
@@ -108,6 +115,7 @@ typedef struct		s_list
 /*
 ** Define the bool typedef to use for older compilers.
 */
+
 typedef enum		e_bool
 {
 	FALSE = 0,
@@ -117,6 +125,7 @@ typedef enum		e_bool
 /*
 ** Functions by type stdlib.h
 */
+
 int					ft_atoi(const char *str);
 int					ft_atoi_base(const char *str, int base);
 char				*ft_itoa(int n);
@@ -129,6 +138,7 @@ void				ft_qsort(void *base, size_t nmemb, size_t size, \
 /*
 ** Functions by type string.h
 */
+
 int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -169,11 +179,13 @@ size_t				ft_strlcat(char *dst, const char *src, size_t size);
 /*
 ** Functions by type strings.h
 */
+
 void				ft_bzero(void *s, size_t n);
 
 /*
 ** Functions by type ctype.h
 */
+
 int					ft_isascii(int c);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
@@ -201,6 +213,7 @@ int					ft_str_is_palindrome(char *str);
 /*
 ** Functions by type stdio.h
 */
+
 void				ft_putchar(char c);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putnchar(char c, int n);
@@ -217,6 +230,7 @@ void				ft_putnstr_fd(char const *str, size_t len, int fd);
 /*
 ** Functions by type math.h
 */
+
 int					ft_min(int x, int y);
 int					ft_min(int x, int y);
 int					ft_isprime(long unsigned int nbr);
@@ -241,6 +255,7 @@ size_t				ft_nbrlen(int nbr, int base);
 /*
 ** Functions by type wchar.h
 */
+
 int					ft_wclen(wchar_t wchar);
 int					ft_putwchar(wchar_t wc);
 int					ft_putwchar_fd(wchar_t wc, int fd);
@@ -255,6 +270,7 @@ wchar_t				*ft_wcsncpy(wchar_t *dst, const wchar_t *src, size_t n);
 /*
 ** Functions by type list.h
 */
+
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
@@ -265,6 +281,7 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 /*
 ** Functions by type array.h
 */
+
 int					ft_arr_elem_get(int *arr, size_t size);
 int					ft_arr_elem_rptd(int *arr, size_t size);
 int					*ft_arr_new(size_t size);
@@ -281,6 +298,7 @@ void				ft_arr_sort_insrt(int *arr, size_t size);
 /*
 ** Miscellaneous functions.
 */
+
 int					ft_do_op(int nbr1, int nbr2, char op);
 char				*ft_str_capitalize(char *str);
 char				*ft_str_to_upcase(char *str);
