@@ -21,9 +21,9 @@
 ** Linux: ulimit -n
 */
 
-# define BUFF_SIZE			8
-# define MAX_FD				1024 + 1
-# define GNL_RET_VAL(ret)	ret > 0 ? 1 : ret
+# define BUFF_SIZE			(8)
+# define MAX_FD				(1024 + 1)
+# define GNL_RET_VAL(ret)	(ret > 0 ? 1 : ret)
 
 /*
 ** Prototype for the get_next_line() function.
