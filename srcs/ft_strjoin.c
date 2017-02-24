@@ -13,7 +13,7 @@
 #include "libft.h"
 
 /*
-** Allocates with malloc() and returns a “fresh” string end- ing with ’\0’,
+** Allocates with malloc() and returns a “fresh” string ending with ’\0’,
 ** result of the concatenation of s1 and s2. If the allocation fails the
 ** function returns NULL.
 */

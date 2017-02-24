@@ -289,6 +289,8 @@ char				*ft_program_name(char const *argv0);
 void				ft_swap(int *a, int *b);
 void				ft_textstyle(int attr, int fg, int bg);
 void				ft_textstyle_reset(void);
+void				ft_puterror(char *msg, int ret);
+void				ft_puterror_fd(char *msg, int ret, int fd);
 size_t				ft_wordcount(const char *s, char c);
 size_t				ft_wordlen(const char *s, char c);
 
