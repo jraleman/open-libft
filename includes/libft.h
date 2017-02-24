@@ -296,7 +296,7 @@ void				ft_arr_sort_bubbl(int *arr, size_t size);
 void				ft_arr_sort_insrt(int *arr, size_t size);
 
 /*
-** Miscellaneous functions.
+** Miscellaneous functions
 */
 
 int					ft_do_op(int nbr1, int nbr2, char op);
