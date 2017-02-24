@@ -25,7 +25,7 @@ char	*ft_strcut(const char *str, char c)
 
 	len = 0;
 	while (str[len] != c && str[len])
-		if (str[len++] != c)
+		if (str[len++] == c)
 			break ;
 	if (!(cut = (char *)malloc(sizeof(char) * len + 1)))
 		return (NULL);
