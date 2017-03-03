@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isendian.c                                      :+:      :+:    :+:   */
+/*   ft_is_little_endian.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,11 @@
 
 #include "libft.h"
 
-int		ft_islittle_endian(void)
+/*
+** Checks if the character is a math operator.
+*/
+
+int		ft_is_little_endian(void)
 {
 	int little;
 
