@@ -204,6 +204,7 @@ int					ft_islower(int c);
 int					ft_isxdigit(int c);
 int					ft_iswspace(int c);
 int					ft_ismathop(int c);
+int					ft_islittle_endian(void);
 int					ft_str_is_lowercase(char *str);
 int					ft_str_is_numeric(char *str);
 int					ft_str_is_printable(char *str);
