@@ -301,6 +301,7 @@ void				ft_arr_sort_insrt(int *arr, size_t size);
 */
 
 int					ft_do_op(int nbr1, int nbr2, char op);
+int					ft_file_extension(char *file, char *ext);
 char				*ft_str_capitalize(char *str);
 char				*ft_str_to_upcase(char *str);
 char				*ft_str_to_lowcase(char *str);
