@@ -306,6 +306,7 @@ char				*ft_str_capitalize(char *str);
 char				*ft_str_to_upcase(char *str);
 char				*ft_str_to_lowcase(char *str);
 char				*ft_program_name(char const *argv0);
+char				*ft_remove_extension(char *filename);
 void				ft_swap(int *a, int *b);
 void				ft_textstyle(int attr, int fg, int bg);
 void				ft_textstyle_reset(void);
