@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_factorial.c                                     :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/23 14:36:15 by jaleman           #+#    #+#             */
-/*   Updated: 2017/01/23 14:36:15 by jaleman          ###   ########.fr       */
+/*   Created: 2016/08/13 23:16:39 by jaleman           #+#    #+#             */
+/*   Updated: 2016/08/13 23:16:40 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Calculates the product of all the positive integers from 1 to a given number.
+** Returns the next prime number greater or equal to the number
+** given as argument.
 */
 
-size_t		ft_factorial(unsigned int nbr)
+size_t		ft_find_next_prime(unsigned int nb)
 {
-	if (nbr >= 1)
-		return (nbr * ft_factorial(nbr - 1));
-	if (!nbr)
-		return (1);
-	return (0);
+	nb += 1;
+	while (!ft_isprime(nb))
+		nb += 1;
+	return (nb);
 }

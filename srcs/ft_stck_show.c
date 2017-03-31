@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_factorial.c                                     :+:      :+:    :+:   */
+/*   ft_stck_show.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/23 14:36:15 by jaleman           #+#    #+#             */
-/*   Updated: 2017/01/23 14:36:15 by jaleman          ###   ########.fr       */
+/*   Created: 2017/03/30 15:15:28 by jaleman           #+#    #+#             */
+/*   Updated: 2017/03/30 15:15:30 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_printf.h"
 
 /*
-** Calculates the product of all the positive integers from 1 to a given number.
-*/
+** Shows the current value of the stack.
+** Builds the dynamic stack below top, which must already exist
+** as a node and is static.
+**/
 
-size_t		ft_factorial(unsigned int nbr)
+void	ft_stck_show(t_stack *top)
 {
-	if (nbr >= 1)
-		return (nbr * ft_factorial(nbr - 1));
-	if (!nbr)
-		return (1);
-	return (0);
+	t_stack	*t;
+
+	if (top)
+	{
+		t = top->next;
+		while (t != NULL)
+		{
+			ft_printf("%lf\n", t->value);
+			t = t->next;
+		}
+	}
 }

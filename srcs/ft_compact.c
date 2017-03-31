@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_factorial.c                                     :+:      :+:    :+:   */
+/*   ft_compact.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/23 14:36:15 by jaleman           #+#    #+#             */
-/*   Updated: 2017/01/23 14:36:15 by jaleman          ###   ########.fr       */
+/*   Created: 2017/03/30 21:27:38 by jaleman           #+#    #+#             */
+/*   Updated: 2017/03/30 21:27:39 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Calculates the product of all the positive integers from 1 to a given number.
+** Compact the elements of an array.
+** Remove elements from the middle of an array by setting up a start point
+** and end point in the array.
 */
 
-size_t		ft_factorial(unsigned int nbr)
+int		ft_compact(char **tab, int length)
 {
-	if (nbr >= 1)
-		return (nbr * ft_factorial(nbr - 1));
-	if (!nbr)
-		return (1);
-	return (0);
+	int		i;
+	int		j;
+
+	i = 0;
+	while (i < length)
+	{
+		while (*(tab + i))
+			i += 1;
+		j = i;
+		length -= 1;
+		while (j < length)
+		{
+			*(tab + j) = *(tab + j + 1);
+			j += 1;
+		}
+	}
+	return (length);
 }

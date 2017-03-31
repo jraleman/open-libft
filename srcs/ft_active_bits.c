@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_factorial.c                                     :+:      :+:    :+:   */
+/*   ft_active_bits.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/23 14:36:15 by jaleman           #+#    #+#             */
-/*   Updated: 2017/01/23 14:36:15 by jaleman          ###   ########.fr       */
+/*   Created: 2017/03/30 21:27:38 by jaleman           #+#    #+#             */
+/*   Updated: 2017/03/30 21:27:39 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Calculates the product of all the positive integers from 1 to a given number.
+** Returns the number of active bits in the int passed as argument.
 */
 
-size_t		ft_factorial(unsigned int nbr)
+size_t	ft_active_bits(int value)
 {
-	if (nbr >= 1)
-		return (nbr * ft_factorial(nbr - 1));
-	if (!nbr)
-		return (1);
-	return (0);
+	size_t	bits;
+
+	bits = 0;
+	while (value > 0)
+	{
+		if ((value & 1) == 1)
+			bits += 1;
+		value >>= 1;
+	}
+	return (bits);
 }

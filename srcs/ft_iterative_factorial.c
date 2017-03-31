@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_factorial.c                                     :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/23 14:36:15 by jaleman           #+#    #+#             */
-/*   Updated: 2017/01/23 14:36:15 by jaleman          ###   ########.fr       */
+/*   Created: 2016/08/13 11:53:24 by jaleman           #+#    #+#             */
+/*   Updated: 2016/08/13 11:53:25 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Calculates the product of all the positive integers from 1 to a given number.
+** Returns the result of a factorial operation based on the number
+** given as a parameter.
 */
 
-size_t		ft_factorial(unsigned int nbr)
+size_t		ft_factorial(unsigned int nb)
 {
-	if (nbr >= 1)
-		return (nbr * ft_factorial(nbr - 1));
-	if (!nbr)
+	unsigned int	factorial;
+	unsigned int	i;
+
+	if (!nb)
 		return (1);
-	return (0);
+	factorial = 1;
+	i = 0;
+	while (i++ < nb)
+		factorial *= i;
+	return (factorial);
 }

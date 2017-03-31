@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_factorial.c                                     :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/23 14:36:15 by jaleman           #+#    #+#             */
-/*   Updated: 2017/01/23 14:36:15 by jaleman          ###   ########.fr       */
+/*   Created: 2016/08/13 21:49:03 by jaleman           #+#    #+#             */
+/*   Updated: 2016/08/13 21:49:04 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Calculates the product of all the positive integers from 1 to a given number.
+** Returns the n-th element of the Fibonacci sequence,
+** the first element being at the 0 index.
 */
 
-size_t		ft_factorial(unsigned int nbr)
+size_t	ft_fibonacci(unsigned int index)
 {
-	if (nbr >= 1)
-		return (nbr * ft_factorial(nbr - 1));
-	if (!nbr)
-		return (1);
-	return (0);
+	if (index < 2)
+		return (index);
+	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }

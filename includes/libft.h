@@ -102,6 +102,16 @@
 # define FT_MEMCMP(A, o, B)	(ft_memcmp((A), (B)) o 0)
 
 /*
+** Define the bool typedef to use for older compilers.
+*/
+
+typedef enum		e_bool
+{
+	FALSE = 0,
+	TRUE = 1
+}					t_bool;
+
+/*
 ** Define the structure called t_list, for ft_lst* function.
 */
 
@@ -113,14 +123,14 @@ typedef struct		s_list
 }					t_list;
 
 /*
-** Define the bool typedef to use for older compilers.
+** Define the structure called t_stack, for ft_stck* function.
 */
 
-typedef enum		e_bool
+typedef struct		s_stack
 {
-	FALSE = 0,
-	TRUE = 1
-}					t_bool;
+	double			value;
+	struct s_stack	*next;
+}					t_stack;
 
 /*
 ** Functions by type stdlib.h
@@ -175,6 +185,7 @@ void				*ft_memset(void *b, int c, size_t len);
 void				*ft_memalloc(size_t size);
 size_t				ft_strlen(const char *str);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
+size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 
 /*
 ** Functions by type strings.h
@@ -249,9 +260,12 @@ long double			ft_roundl(long double x);
 long double			ft_floorl(long double x);
 long double			ft_powl(long double x, long int y);
 long double			ft_hypotl(long double x, long double y);
-long unsigned int	ft_factorial(int nbr);
+unsigned int		ft_collatz_conjecture(unsigned int base);
 long unsigned int	ft_nextprime(long unsigned int nbr);
 size_t				ft_nbrlen(int nbr, int base);
+size_t				ft_factorial(unsigned int nb);
+size_t				ft_fibonacci(unsigned int index);
+size_t				ft_find_next_prime(unsigned int nb);
 
 /*
 ** Functions by type wchar.h
@@ -283,6 +297,7 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 ** Functions by type array.h
 */
 
+int					ft_arr_max(int *arr, int length);
 int					ft_arr_elem_get(int *arr, size_t size);
 int					ft_arr_elem_rptd(int *arr, size_t size);
 int					*ft_arr_new(size_t size);
@@ -297,9 +312,18 @@ void				ft_arr_sort_bubbl(int *arr, size_t size);
 void				ft_arr_sort_insrt(int *arr, size_t size);
 
 /*
+** Functions by type stack.h
+*/
+
+void				ft_stck_show(t_stack *top);
+void				ft_stck_push(t_stack *top, double newdata);
+double				ft_stck_pop(t_stack *top);
+
+/*
 ** Miscellaneous functions
 */
 
+int					ft_compact(char **tab, int length);
 int					ft_do_op(int nbr1, int nbr2, char op);
 int					ft_file_extension(char *file, char *ext);
 char				*ft_str_capitalize(char *str);
@@ -312,6 +336,7 @@ void				ft_textstyle(int attr, int fg, int bg);
 void				ft_textstyle_reset(void);
 void				ft_puterror(char *msg, int ret);
 void				ft_puterror_fd(char *msg, int ret, int fd);
+size_t				ft_active_bits(int value);
 size_t				ft_wordcount(const char *s, char c);
 size_t				ft_wordlen(const char *s, char c);
 
