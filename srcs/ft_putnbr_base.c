@@ -18,8 +18,8 @@
 
 static int	check_base(char *base)
 {
-	int	i;
-	int	z;
+	int		i;
+	int		z;
 
 	i = 0;
 	z = 0;
@@ -43,11 +43,11 @@ static int	check_base(char *base)
 ** Displays a number in a base system onscreen.
 */
 
-void	ft_putnbr_base(int nbr, char *base)
+void		ft_putnbr_base(int nbr, char *base)
 {
-	int	i;
-	int	size;
-	int	n[10];
+	int		i;
+	int		size;
+	int		n[10];
 
 	i = 0;
 	size = 0;

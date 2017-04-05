@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_memory.c                                   :+:      :+:    :+:   */
+/*   ft_print_memory.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 /*
 ** Displays the memory area onscreen, splitting it into three columns:
@@ -20,11 +20,36 @@
 ** If a character is non-printable, it’ll be replaced by a dot.
 */
 
-void	ft_print_memory(void *addr, unsigned int size)
+static void	print_hex(int i, unsigned int size, unsigned char *p)
 {
-	char 			*str;
+	char			*str;
+	unsigned int	j;
+
+	j = 0;
+	str = "0123456789abcdef";
+	while (j < 16 && i + j < size)
+	{
+		ft_putchar((char)str[(*(p + i + j) / 16) % 16]);
+		ft_putchar((char)str[*(p + i + j) % 16]);
+		if (j % 2)
+			ft_putchar(' ');
+		j += 1;
+	}
+	while (j < 16)
+	{
+		ft_putchar(' ');
+		ft_putchar(' ');
+		if (j % 2)
+			ft_putchar(' ');
+		j += 1;
+	}
+}
+
+void		ft_print_memory(void *addr, unsigned int size)
+{
+	char			*str;
 	unsigned int	i;
-	unsigned int 	j;
+	unsigned int	j;
 	unsigned char	*p;
 
 	str = "0123456789abcdef";
@@ -32,32 +57,17 @@ void	ft_print_memory(void *addr, unsigned int size)
 	i = 0;
 	while (i < size)
 	{
-		j = 0;
-		while (j < 16 && i + j < size)
-		{
-			write(1, &str[(*(p + i + j)/16) % 16], 1);
-			write(1, &str[*(p + i + j) % 16], 1);
-			if (j % 2)
-				write(1, " ", 1);
-			j += 1;
-		}
-		while (j < 16)
-		{
-			write(1, "  ", 2);
-			if (j % 2)
-				write(1, " ", 1);
-			j++;
-		}
+		print_hex(i, size, p);
 		j = 0;
 		while (j < 16 && i + j < size)
 		{
 			if (*(p + i + j) >= 32 && *(p + i + j) <= 126)
-				write(1, p + i + j, 1);
+				ft_putchar((char)*(p + i + j));
 			else
-				write(1, ".", 1);
+				ft_putchar('.');
 			j += 1;
 		}
-		write(1, "\n", 1);
+		ft_putchar('\n');
 		i += 16;
 	}
 }

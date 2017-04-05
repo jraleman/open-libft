@@ -17,7 +17,7 @@
 ** Shows the current value of the stack.
 ** Builds the dynamic stack below top, which must already exist
 ** as a node and is static.
-**/
+*/
 
 void	ft_stck_show(t_stack *top)
 {
