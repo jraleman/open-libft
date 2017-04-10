@@ -91,6 +91,8 @@
 ** Macro functions.
 */
 
+# define FT_LO(num)			((num) & 0x00FF)
+# define FT_HI(num)			(((num) & 0xFF00) >> 8)
 # define FT_MIN(x, y)		(x) < (y) ? (x) : (y)
 # define FT_MAX(x, y)		(x) > (y) ? (x) : (y)
 # define FT_ABS(x)			(((x) < 0) ? -(x) : (x))
@@ -142,8 +144,8 @@ char				*ft_itoa(int n);
 char				*ft_itoa_base(int value, int base);
 void				*ft_realloc(void *ptr, size_t size);
 void				*ft_calloc(size_t count, size_t size);
-void				ft_qsort(void *base, size_t nmemb, size_t size, \
-						int (*fcmp)(void *, void *));
+void				ft_qsort(void *base, size_t nmemb, \
+								size_t size, int (*fcmp)(void *, void *));
 
 /*
 ** Functions by type string.h
@@ -305,11 +307,18 @@ int					*ft_arr_cpy(const int *arr, size_t size);
 int					*ft_arr_rotl(int *arr, size_t size, unsigned int tms);
 int					*ft_arr_rotr(int *arr, size_t size, unsigned int tms);
 int					*ft_arr_do_op(const int *arr, size_t size, \
-					char op, int val);
+									char op, int val);
 int					*ft_arr_elem_pop(int *arr, size_t size, unsigned int pos);
 void				ft_arr_print(int *arr, size_t size, char *encl);
 void				ft_arr_sort_bubbl(int *arr, size_t size);
 void				ft_arr_sort_insrt(int *arr, size_t size);
+
+/*
+** Functions by type matrix.h
+*/
+
+int					**ft_mat_new(int row, int col);
+void				ft_mat_del(int **matrix, int row);
 
 /*
 ** Functions by type stack.h
@@ -337,6 +346,7 @@ void				ft_textstyle_reset(void);
 void				ft_puterror(char *msg, int ret);
 void				ft_puterror_fd(char *msg, int ret, int fd);
 size_t				ft_active_bits(int value);
+size_t				ft_nbrcount(const char *s, char c);
 size_t				ft_wordcount(const char *s, char c);
 size_t				ft_wordlen(const char *s, char c);
 

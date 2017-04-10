@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_file_extension.c                                :+:      :+:    :+:   */
+/*   ft_mat_new.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/11 20:19:37 by jaleman           #+#    #+#             */
-/*   Updated: 2017/03/11 20:19:38 by jaleman          ###   ########.fr       */
+/*   Created: 2017/04/08 01:13:04 by jaleman           #+#    #+#             */
+/*   Updated: 2017/04/08 01:13:05 by jaleman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Validates if the file has a specific file extension (given by ext string).
-** Returns a one (1) if it does, returns zero (0) otherwise.
+** Responsible for allocating a matrix (2 dimensional dynamic array).
 */
 
-int		ft_file_extension(char *file, char *ext)
+int			**ft_mat_new(int row, int col)
 {
-	return (ft_strequ(ft_strrchr(file, '.'), ext));
+	int		i;
+	int		**matrix;
+
+	i = 0;
+	if (!(matrix = (int **)ft_calloc(sizeof(int *) * row, 0)))
+		return (0);
+	while (i < row)
+	{
+		if (!(matrix[i] = (int *)ft_calloc(sizeof(int) * col, 0)))
+			return (0);
+		i++;
+	}
+	return (matrix);
 }

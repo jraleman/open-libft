@@ -14,12 +14,10 @@ NAME    := libft.a
 
 INC_DIR := includes
 SRC_DIR := srcs
-LIB_DIR := libs
 OBJ_DIR := objs
 
 INCLS   := $(INC_DIR)
 SRCS    := $(wildcard $(SRC_DIR)/*.c)
-LIBS    := $(addprefix $(LIB_DIR)/, $(NAME))
 OBJS    := $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 CC      := gcc
@@ -28,15 +26,14 @@ LFLAGS  += -I.
 AR      := ar rc
 RLIB    := ranlib
 
-all:	obj $(LIBS)
+all:	obj $(NAME)
 
 obj:
 		@mkdir -p $(OBJ_DIR)
 
-$(LIBS): $(OBJS)
-		@mkdir -p $(LIB_DIR)
-		@$(AR) $(LIBS) $(OBJS)
-		@$(RLIB) $(LIBS)
+$(NAME): $(OBJS)
+		@$(AR) $(NAME) $(OBJS)
+		@$(RLIB) $(NAME)
 		@echo "[INFO] $(NAME) created!"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
@@ -47,7 +44,7 @@ clean:
 		@echo "[INFO] Objects removed!"
 
 fclean: clean
-		@rm -rf $(LIBS) $(LIB_DIR)
+		@rm -rf $(NAME) $(LIB_DIR)
 		@echo "[INFO] Library [$(NAME)] removed!"
 
 re:		fclean all
