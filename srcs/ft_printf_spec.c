@@ -37,7 +37,7 @@ static int	specifier_position(char c, char *spec)
 ** specifiers, and bit twenty-seven (27) for the bonus, the binary).
 */
 
-static int	get_specifier(char c, t_attr *attr, char *spec)
+static int	get_specifier(char c, t_prntf *attr, char *spec)
 {
 	int		*corres;
 	int		specifier;
@@ -69,7 +69,7 @@ static int	get_specifier(char c, t_attr *attr, char *spec)
 ** If the attribute isn't valid, returns a printf error.
 */
 
-int			parse_specifier(va_list arg, char **format, t_attr *attr)
+int			parse_specifier(va_list arg, char **format, t_prntf *attr)
 {
 	int		specifier;
 	int		is_valid;

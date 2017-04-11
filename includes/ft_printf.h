@@ -29,12 +29,12 @@
 ** Printf's attribute structure.
 */
 
-typedef struct		s_attr
+typedef struct		s_prntf
 {
 	int		flags;
 	int		precision;
 	int		width;
-}					t_attr;
+}					t_prntf;
 
 /*
 ** @ s or s : String of characters
@@ -115,27 +115,27 @@ int					ft_printf(const char *format, ...);
 ** Prototypes from the auxiliary functions.
 */
 
-int					parse_specifier(va_list arg, char **format, t_attr *attr);
+int					parse_specifier(va_list arg, char **format, t_prntf *attr);
 int					print_spaces(int width, int len, int attr);
-int					get_attributes(char **format, va_list arg, t_attr *attr);
-int					get_nbr_zeroes(t_attr *attr, int *len, int sign);
+int					get_attributes(char **format, va_list arg, t_prntf *attr);
+int					get_nbr_zeroes(t_prntf *attr, int *len, int sign);
 int					get_nbr_spaces(int attr, int minw, int *len);
 char				*get_nbr_unsigned(uintmax_t n, int *nbdig, int base);
-int					format_signed(intmax_t n, t_attr *attr);
-int					format_unsigned(uintmax_t n, t_attr *attr, \
+int					format_signed(intmax_t n, t_prntf *attr);
+int					format_unsigned(uintmax_t n, t_prntf *attr, \
 						char *(*convert)(uintmax_t, int *));
 
 /*
 ** Prototypes from the print functions.
 */
 
-int					print_string(va_list ap, t_attr *attr);
-int					print_wide_string(va_list ap, t_attr *attr);
-int					print_hexadecimal(va_list ap, t_attr *attr);
-int					print_decimal(va_list ap, t_attr *attr);
-int					print_octal(va_list ap, t_attr *attr);
-int					print_character(va_list ap, t_attr *attr);
-int					print_wide_character(va_list ap, t_attr *attr);
-int					print_binary(va_list ap, t_attr *attr);
+int					print_string(va_list ap, t_prntf *attr);
+int					print_wide_string(va_list ap, t_prntf *attr);
+int					print_hexadecimal(va_list ap, t_prntf *attr);
+int					print_decimal(va_list ap, t_prntf *attr);
+int					print_octal(va_list ap, t_prntf *attr);
+int					print_character(va_list ap, t_prntf *attr);
+int					print_wide_character(va_list ap, t_prntf *attr);
+int					print_binary(va_list ap, t_prntf *attr);
 
 #endif

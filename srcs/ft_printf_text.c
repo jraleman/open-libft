@@ -31,7 +31,7 @@ int		print_spaces(int width, int len, int attr)
 ** Prints string of wide characters.
 */
 
-int		print_wide_string(va_list ap, t_attr *attr)
+int		print_wide_string(va_list ap, t_prntf *attr)
 {
 	int		len;
 	wchar_t	*str;
@@ -59,7 +59,7 @@ int		print_wide_string(va_list ap, t_attr *attr)
 ** Prints wide characters.
 */
 
-int		print_wide_character(va_list ap, t_attr *attr)
+int		print_wide_character(va_list ap, t_prntf *attr)
 {
 	int		len;
 	wchar_t	c;
@@ -78,7 +78,7 @@ int		print_wide_character(va_list ap, t_attr *attr)
 ** Prints string of characters.
 */
 
-int		print_string(va_list ap, t_attr *attr)
+int		print_string(va_list ap, t_prntf *attr)
 {
 	int		len;
 	char	*str;
@@ -108,7 +108,7 @@ int		print_string(va_list ap, t_attr *attr)
 ** Prints characters.
 */
 
-int		print_character(va_list ap, t_attr *attr)
+int		print_character(va_list ap, t_prntf *attr)
 {
 	int		len;
 	char	c;

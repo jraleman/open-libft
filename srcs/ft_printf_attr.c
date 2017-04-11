@@ -31,7 +31,7 @@
 **          preceded with a minus (-) sign.
 */
 
-static int	get_flags(char flg, t_attr *attr)
+static int	get_flags(char flg, t_prntf *attr)
 {
 	flg == '#' ? attr->flags |= HASH : 0;
 	flg == '0' ? attr->flags |= ZERO : 0;
@@ -53,7 +53,7 @@ static int	get_flags(char flg, t_attr *attr)
 **             blank spaces.
 */
 
-static int	get_width(va_list arg, char *format, t_attr *attr)
+static int	get_width(va_list arg, char *format, t_prntf *attr)
 {
 	int		width;
 	char	*nbr;
@@ -91,7 +91,7 @@ static int	get_width(va_list arg, char *format, t_attr *attr)
 ** By default all characters are printed until a null character is encountered.
 */
 
-static int	get_precision(va_list ap, char *format, t_attr *attr)
+static int	get_precision(va_list ap, char *format, t_prntf *attr)
 {
 	int		precision;
 	char	*nbr;
@@ -134,7 +134,7 @@ static int	get_precision(va_list ap, char *format, t_attr *attr)
 ** z       | size_t        | size_t                 |        |          |
 */
 
-static int	get_length(char *format, t_attr *attr)
+static int	get_length(char *format, t_prntf *attr)
 {
 	int		length;
 
@@ -165,7 +165,7 @@ static int	get_length(char *format, t_attr *attr)
 ** is valid.
 */
 
-int			get_attributes(char **format, va_list arg, t_attr *attr)
+int			get_attributes(char **format, va_list arg, t_prntf *attr)
 {
 	char	*init;
 	int		format_width;

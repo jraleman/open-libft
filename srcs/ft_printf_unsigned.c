@@ -33,7 +33,7 @@ static int	not_decimal(uintmax_t nbr, int attr, int prec)
 ** Gets the number of zeroes (0) from the flags and the precision values.
 */
 
-int			get_nbr_zeroes(t_attr *attr, int *len, int sign)
+int			get_nbr_zeroes(t_prntf *attr, int *len, int sign)
 {
 	int		nbr_zeros;
 
@@ -111,7 +111,7 @@ char		*get_nbr_unsigned(uintmax_t nbr, int *nbr_digits, int base)
 ** God bless you trying to understand this shit.
 */
 
-int			format_unsigned(uintmax_t nbr, t_attr *attr, \
+int			format_unsigned(uintmax_t nbr, t_prntf *attr, \
 							char *(*convert)(uintmax_t, int *))
 {
 	int		len;

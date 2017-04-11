@@ -28,7 +28,7 @@ static char	*convert_binary(uintmax_t nbr, int *nbr_digits)
 ** length gotten with the flags.
 */
 
-int			print_binary(va_list ap, t_attr *attr)
+int			print_binary(va_list ap, t_prntf *attr)
 {
 	int		len;
 

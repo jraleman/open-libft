@@ -29,7 +29,7 @@ static char	*conv_dec(uintmax_t nbr, int *nbr_digits)
 ** is given.
 */
 
-static int	signed_nbr(va_list ap, t_attr *attr)
+static int	signed_nbr(va_list ap, t_prntf *attr)
 {
 	int		len;
 
@@ -55,7 +55,7 @@ static int	signed_nbr(va_list ap, t_attr *attr)
 ** is given.
 */
 
-static int	unsigned_nbr(va_list ap, t_attr *attr)
+static int	unsigned_nbr(va_list ap, t_prntf *attr)
 {
 	int		len;
 
@@ -85,7 +85,7 @@ static int	unsigned_nbr(va_list ap, t_attr *attr)
 ** length gotten with the flags (from the signed_nbr or unsigned_nbr functions).
 */
 
-int			print_decimal(va_list ap, t_attr *attr)
+int			print_decimal(va_list ap, t_prntf *attr)
 {
 	int		len;
 	int		flags;

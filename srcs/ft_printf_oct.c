@@ -28,7 +28,7 @@ static char	*convert_octal(uintmax_t nbr, int *nbdig)
 ** length gotten with the flags.
 */
 
-int			print_octal(va_list ap, t_attr *attr)
+int			print_octal(va_list ap, t_prntf *attr)
 {
 	int		len;
 

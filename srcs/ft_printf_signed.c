@@ -65,7 +65,7 @@ static void	put_sign(intmax_t nbr, int attr)
 ** God bless you trying to understand this shit.
 */
 
-int			format_signed(intmax_t nbr, t_attr *attr)
+int			format_signed(intmax_t nbr, t_prntf *attr)
 {
 	int		len;
 	int		sign;

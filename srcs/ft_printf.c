@@ -18,7 +18,7 @@
 ** justification given the minus flag: (left or right).
 */
 
-static int	print_no_specifier(char c, t_attr *attr)
+static int	print_no_specifier(char c, t_prntf *attr)
 {
 	int		len;
 
@@ -34,7 +34,7 @@ static int	print_no_specifier(char c, t_attr *attr)
 ** Prints the specific specifier given from the format.
 */
 
-static int	print_specifier(char format, va_list arg, t_attr *attr, int i)
+static int	print_specifier(char format, va_list arg, t_prntf *attr, int i)
 {
 	int		print;
 
@@ -68,7 +68,7 @@ static int	print_specifier(char format, va_list arg, t_attr *attr, int i)
 static int	print_stdout(const char *format[], va_list arg)
 {
 	int		specifier;
-	t_attr	attribute;
+	t_prntf	attribute;
 
 	attribute.flags = 0;
 	attribute.width = 0;
