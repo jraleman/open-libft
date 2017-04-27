@@ -17,10 +17,11 @@
 ** Header files dependencies.
 */
 
-# include <unistd.h>
-# include <stdlib.h>
+# include <errno.h>
 # include <wchar.h>
+# include <stdlib.h>
 # include <stdint.h>
+# include <unistd.h>
 # include <sys/types.h>
 
 /*

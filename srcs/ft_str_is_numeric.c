@@ -22,7 +22,7 @@ int		ft_str_is_numeric(char *str)
 
 	i = 0;
 	while (str[i])
-		if (!ft_isalnum(str[i++]))
+		if (!ft_isdigit(str[i++]))
 			return (0);
 	return (1);
 }
