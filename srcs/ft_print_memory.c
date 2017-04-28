@@ -47,12 +47,10 @@ static void	print_hex(int i, unsigned int size, unsigned char *p)
 
 void		ft_print_memory(void *addr, unsigned int size)
 {
-	char			*str;
 	unsigned int	i;
 	unsigned int	j;
 	unsigned char	*p;
 
-	str = "0123456789abcdef";
 	p = (unsigned char *)addr;
 	i = 0;
 	while (i < size)
