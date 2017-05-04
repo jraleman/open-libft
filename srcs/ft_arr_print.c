@@ -23,6 +23,8 @@ void	ft_arr_print(int *arr, size_t size, char *encl)
 	unsigned int	i;
 
 	i = 0;
+	if (size == 0)
+	    return ;
 	if (ft_strlen(encl) != 2)
 		encl = "{}";
 	while (i < (size - 1))
