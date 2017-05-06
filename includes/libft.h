@@ -342,6 +342,7 @@ char				*ft_str_to_upcase(char *str);
 char				*ft_str_to_lowcase(char *str);
 char				*ft_program_name(char const *argv0);
 char				*ft_remove_extension(char *filename);
+char				*ft_separated_values(char **values, char c);
 void				ft_swap(int *a, int *b);
 void				ft_textstyle(int attr, int fg, int bg);
 void				ft_textstyle_reset(void);
@@ -351,5 +352,7 @@ size_t				ft_active_bits(int value);
 size_t				ft_nbrcount(const char *s, char c);
 size_t				ft_wordcount(const char *s, char c);
 size_t				ft_wordlen(const char *s, char c);
+size_t				ft_char_count(char **values);
+size_t				ft_values_count(char **values);
 
 #endif
