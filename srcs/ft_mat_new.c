@@ -28,7 +28,7 @@ int			**ft_mat_new(int row, int col)
 	{
 		if (!(matrix[i] = (int *)ft_calloc(sizeof(int) * col, 0)))
 			return (0);
-		i++;
+		i += 1;
 	}
 	return (matrix);
 }

@@ -20,8 +20,6 @@ long unsigned int	ft_nextprime(long unsigned int nbr)
 {
 	nbr += 1;
 	while (!ft_isprime(nbr))
-	{
-		nbr++;
-	}
+		nbr += 1;
 	return (nbr);
 }
