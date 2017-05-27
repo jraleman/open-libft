@@ -28,27 +28,27 @@
 ** Attributes for printed text.
 */
 
-# define RESET				(0)
-# define BOLD				(1)
-# define DIM				(2)
-# define ITALICS			(3)
-# define UNDERLINE			(4)
-# define REVERSE			(7)
-# define HIDDEN				(8)
-# define STROKE				(9)
+# define FT_RESET			(0)
+# define FT_BOLD			(1)
+# define FT_DIM				(2)
+# define FT_ITALICS			(3)
+# define FT_UNDERLINE		(4)
+# define FT_REVERSE			(7)
+# define FT_HIDDEN			(8)
+# define FT_STROKE			(9)
 
 /*
 ** Colors for printed text.
 */
 
-# define BLACK				(0)
-# define RED				(1)
-# define GREEN				(2)
-# define YELLOW				(3)
-# define BLUE				(4)
-# define MAGENTA			(5)
-# define CYAN				(6)
-# define WHITE				(7)
+# define FT_BLACK			(0)
+# define FT_RED				(1)
+# define FT_GREEN			(2)
+# define FT_YELLOW			(3)
+# define FT_BLUE			(4)
+# define FT_MAGENTA			(5)
+# define FT_CYAN			(6)
+# define FT_WHITE			(7)
 
 /*
 ** Macros for the limits of the variables.
