@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+.//* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
@@ -334,6 +334,7 @@ double				ft_stck_pop(t_stack *top);
 ** Miscellaneous functions
 */
 
+int					ft_angle_to_degrees(int angle);
 int					ft_compact(char **tab, int length);
 int					ft_do_op(int nbr1, int nbr2, char op);
 int					ft_file_extension(char *file, char *ext);
