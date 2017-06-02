@@ -21,7 +21,7 @@ int		ft_wclen(wchar_t wc)
 	int		len;
 
 	len = 0;
-	if (wc <= 0xFF)
+	if (wc < 0x80)
 		len = 1;
 	else if (wc < 0x0800)
 		len = 2;

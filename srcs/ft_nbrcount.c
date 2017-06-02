@@ -18,8 +18,8 @@
 
 size_t		ft_nbrcount(const char *s, char c)
 {
-	size_t	i;
-	size_t	nbr;
+	unsigned int	i;
+	size_t			nbr;
 
 	i = 0;
 	nbr = 0;

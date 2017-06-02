@@ -27,7 +27,7 @@ static void	print_hex(int np)
 		print_hex(np % 10);
 	}
 	else
-		write(1, &hex[np], 1);
+		ft_putchar(hex[np]);
 }
 
 /*
@@ -46,13 +46,13 @@ void		ft_putstr_non_printable(char *str)
 	{
 		if ((str[i] <= 31 && str[i] >= 0) || str[i] == 127)
 		{
-			write(1, "\\", 1);
+			ft_putchar('\\');
 			if (str[i] < 16)
-				write(1, "0", 1);
+				ft_putchar('0');
 			print_hex(str[i]);
 		}
 		else
-			write(1, &str[i], 1);
+			ft_putchar(str[i]);
 		i += 1;
 	}
 }

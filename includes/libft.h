@@ -233,12 +233,15 @@ int					ft_str_is_palindrome(char *str);
 void				ft_putchar(char c);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putnchar(char c, int n);
+void				ft_putnchar_fd(char c, int n, int fd);
 void				ft_putstr(const char *s);
 void				ft_putstr_fd(const char *s, int fd);
 void				ft_putendl(const char *s);
 void				ft_putendl_fd(const char *s, int fd);
 void				ft_putnbr(int n);
 void				ft_putnbr_fd(int n, int fd);
+void				ft_putnbr_base(int nbr, char *base);
+void				ft_putnbr_base_fd(int nbr, char *base, int fd);
 void				ft_putunbr(uintmax_t n);
 void				ft_putnstr(char const *s, size_t len);
 void				ft_putnstr_fd(char const *str, size_t len, int fd);
@@ -301,26 +304,28 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 ** Functions by type array.h
 */
 
-int					ft_arr_max(int *arr, int length);
-int					ft_arr_elem_get(int *arr, size_t size);
-int					ft_arr_elem_rptd(int *arr, size_t size);
-int					*ft_arr_new(size_t size);
-int					*ft_arr_cpy(const int *arr, size_t size);
-int					*ft_arr_rotl(int *arr, size_t size, unsigned int tms);
-int					*ft_arr_rotr(int *arr, size_t size, unsigned int tms);
-int					*ft_arr_do_op(const int *arr, size_t size, \
-									char op, int val);
-int					*ft_arr_elem_pop(int *arr, size_t size, unsigned int pos);
-void				ft_arr_print(int *arr, size_t size, char *encl);
-void				ft_arr_sort_bubbl(int *arr, size_t size);
-void				ft_arr_sort_insrt(int *arr, size_t size);
+int					ft_array_max_value(int *arr, int length);
+size_t				ft_array_count_repeated(int *arr, size_t size);
+int					*ft_array_new(size_t size);
+int					*ft_array_copy(const int *src, int *dst, \
+									size_t n_src, size_t n_dst);
+int					*ft_array_rotate_left(int *arr, size_t size, \
+											unsigned int tms);
+int					*ft_array_rotate_right(int *arr, size_t size, \
+											unsigned int tms);
+int					*ft_array_do_op(int *arr, size_t size, char op, int val);
+int					*ft_array_pop(int *arr, size_t size, unsigned int pos);
+void				ft_array_print(int *arr, size_t size, char *encl);
+void				ft_array_bubble_sort(int *arr, size_t size);
+void				ft_array_insertion_sort(int *arr, size_t size);
+void				ft_array_delete(int *arr);
 
 /*
 ** Functions by type matrix.h
 */
 
-int					**ft_mat_new(int row, int col);
-void				ft_mat_del(int **matrix, int row);
+int					**ft_matrix_new(int row, int col);
+void				ft_matrix_delete(int **matrix, int row);
 
 /*
 ** Functions by type stack.h
@@ -334,6 +339,7 @@ double				ft_stck_pop(t_stack *top);
 ** Miscellaneous functions
 */
 
+int					ft_active_bits(int value);
 int					ft_angle_to_degrees(int angle);
 int					ft_compact(char **tab, int length);
 int					ft_do_op(int nbr1, int nbr2, char op);
@@ -349,7 +355,6 @@ void				ft_textstyle(int attr, int fg, int bg);
 void				ft_textstyle_reset(void);
 void				ft_puterror(char *msg, int ret);
 void				ft_puterror_fd(char *msg, int ret, int fd);
-size_t				ft_active_bits(int value);
 size_t				ft_nbrcount(const char *s, char c);
 size_t				ft_wordcount(const char *s, char c);
 size_t				ft_wordlen(const char *s, char c);

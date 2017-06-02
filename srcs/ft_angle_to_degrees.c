@@ -14,10 +14,10 @@
 
 /*
 ** Converts an angle to a degree.
-** If the angle is over 360 or under 0, start from the beginning.
+** If the angle is over 360, start from the beginning.
 */
 
-int		ft_angle_to_degrees(int angle)
+int		ft_degrees_to_angle(int angle)
 {
 	return (FT_ABS(angle % 360));
 }

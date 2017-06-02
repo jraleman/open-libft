@@ -20,9 +20,5 @@
 
 void	ft_putnstr(char const *s, size_t len)
 {
-	if (s)
-	{
-		ft_strlen(s) < len ? len = ft_strlen(s) : len;
-		write(1, s, len);
-	}
+	ft_putnstr_fd(s, len, STDOUT_FILENO);
 }

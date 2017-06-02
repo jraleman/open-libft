@@ -29,8 +29,8 @@ double		ft_pow(double x, int y)
 			y >>= 2;
 			x *= x;
 		}
-		--y;
-		z = x * z;
+		y -= 1;
+		z *= x;
 	}
 	return (z);
 }

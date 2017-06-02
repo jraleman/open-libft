@@ -16,7 +16,7 @@
 ** Checks if the number base is valid.
 */
 
-static int	verify_nbr_base(char c, int base)
+static int	verify_base_nbr(char c, int base)
 {
 	if (base <= 10)
 		return (c >= '0' && c <= '9');
@@ -46,7 +46,7 @@ int			ft_atoi_base(const char *str, int base)
 		i += 1;
 	if (str[i] == '-' || str[i] == '+')
 		str[i++] == '-' ? sign *= -1 : sign;
-	while (str[i] && verify_nbr_base(str[i], base))
+	while (str[i] && verify_base_nbr(str[i], base))
 	{
 		if (str[i] >= 'A' && 'F' >= str[i])
 			nbr = (nbr * base) + (str[i] - 'A' + 10);

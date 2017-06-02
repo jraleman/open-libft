@@ -18,8 +18,8 @@
 
 size_t		ft_wordcount(const char *s, char c)
 {
-	size_t	i;
-	size_t	w;
+	unsigned int	i;
+	size_t			w;
 
 	i = 0;
 	w = 0;

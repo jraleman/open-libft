@@ -16,7 +16,7 @@
 ** Takes an int, and converts it to a null-terminated string.
 */
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	size_t	i;
 	size_t	n_size;

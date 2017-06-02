@@ -16,16 +16,17 @@
 ** Capitalized each word (separated by a space), of a string.
 */
 
-char	*ft_str_capitalize(char *str)
+char	*ft_str_capitalize(char *s)
 {
 	int		i;
 
 	i = 0;
-	if (ft_islower(str[i]))
-		str[i] -= 32;
-	while (str[i++])
-		if (ft_isspace(str[i]) || ft_ispunct(str[i]))
-			if (ft_islower(str[i + 1]))
-				str[i + 1] -= 32;
+	if (ft_islower(s[i]))
+		s[i] -= 32;
+	while (s[i++])
+	{
+		if ((ft_isspace(s[i]) || ft_ispunct(s[i])) && ft_islower(s[i + 1]))
+			s[i + 1] -= 32;
+	}
 	return (str);
 }

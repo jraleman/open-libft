@@ -21,8 +21,5 @@ int		ft_is_little_endian(void)
 	int little;
 
 	little = 1;
-	if (*(char *)&little == 1)
-		return (1);
-	else
-		return (0);
+	return (*(char *)&little == 1 ? 1 : 0);
 }

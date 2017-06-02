@@ -18,10 +18,10 @@
 
 size_t		ft_values_count(char **values)
 {
-	size_t	i;
+	size_t	count;
 
-	i = 0;
-	while (values[i] != NULL)
-		i += 1;
-	return (i);
+	count = 0;
+	while (values[count] != NULL)
+		count += 1;
+	return (count);
 }

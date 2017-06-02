@@ -22,17 +22,18 @@ void	ft_putnbr_fd(int n, int fd)
 
 	if (n == -2147483648)
 	{
-		write(fd, "-2147483648", 11);
+		ft_putstr_fd("-2147483648", fd);
 		return ;
 	}
 	if (n < 0)
 	{
 		n *= -1;
-		write(fd, "-", 1);
+		ft_putchar_fd('-', fd);
 	}
 	if (n < 10)
 	{
 		c = n + '0';
+		ft_putchar_fd(c, fd);
 		write(fd, &c, 1);
 	}
 	else

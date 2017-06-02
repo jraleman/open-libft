@@ -21,17 +21,18 @@
 
 int		ft_do_op(int nbr1, int nbr2, char op)
 {
-	if (op == '+')
-		return (nbr1 + nbr2);
-	if (op == '-')
-		return (nbr1 - nbr2);
-	if (op == '*')
-		return (nbr1 * nbr2);
-	if (op == '/')
-		if (nbr2 != 0)
-			return (nbr1 / nbr2);
-	if (op == '%')
-		if (nbr2 != 0)
-			return (nbr1 % nbr2);
-	return (0);
+	int	result;
+
+	result = 0;
+	if (op ==  '+')
+		result = nbr1 + nbr2;
+	else if (op ==  '-')
+		result = nbr1 - nbr2;
+	else if (op ==  '*')
+		result = nbr1 * nbr2;
+	else if (op ==  '/')
+		result = (nbr2 != 0) ? (nbr1 / nbr2) : result;
+	else if (op ==  '%')
+		result = (nbr2 != 0) ? (nbr1 % nbr2) : result;
+	return (result);
 }

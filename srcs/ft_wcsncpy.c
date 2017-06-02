@@ -20,8 +20,8 @@
 
 wchar_t		*ft_wcsncpy(wchar_t *dst, const wchar_t *src, size_t n)
 {
-	size_t	i;
-	size_t	len;
+	unsigned int	i;
+	size_t			len;
 
 	i = 0;
 	len = 0;

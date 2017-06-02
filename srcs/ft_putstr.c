@@ -18,10 +18,5 @@
 
 void	ft_putstr(char const *s)
 {
-	int		i;
-
-	i = 0;
-	if (s)
-		while (s[i])
-			write(1, &s[i++], 1);
+	ft_putstr(s, STDOUT_FILENO);
 }

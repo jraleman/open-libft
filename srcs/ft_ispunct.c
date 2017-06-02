@@ -13,11 +13,11 @@
 #include "libft.h"
 
 /*
-** Checks if the character is a printing, non-alphanumeric one.
+** Checks if the character is a punctuation, non-alphanumeric one.
 */
 
 int		ft_ispunct(int c)
 {
-	return ((c >= 33 && 47 >= c) || (c >= 58 && 64 >= c) \
-			|| (c >= 91 && 96 >= c) || (c >= 123 && 126 >= c));
+	return ((c >= '!' && c <= '/') || (c >= ':' && c <= '@') \
+			|| (c >= '[' && c <= '`') || (c >= '{' && c <= '~'));
 }

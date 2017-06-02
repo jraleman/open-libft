@@ -18,5 +18,5 @@
 
 int		ft_iscntrl(int c)
 {
-	return (c >= ' ' && '~' >= c);
+	return (ft_isprint(c) == 0 ? 1 : 0);
 }

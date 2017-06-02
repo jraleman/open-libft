@@ -23,6 +23,6 @@ void	ft_putnstr_fd(char const *s, size_t len, int fd)
 	if (s)
 	{
 		ft_strlen(s) < len ? len = ft_strlen(s) : len;
-		write(fd, s, len);
+		ft_putnchar(s, len, fd);
 	}
 }

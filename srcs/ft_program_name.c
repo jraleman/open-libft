@@ -23,7 +23,5 @@ char	*ft_program_name(char const *argv0)
 	name = (char *)argv0;
 	while (*name && *name != '/')
 		name += 1;
-	if (!name)
-		return ((char *)argv0);
-	return (name + 1);
+	return (!name ? (char *)argv0 : name + 1);
 }

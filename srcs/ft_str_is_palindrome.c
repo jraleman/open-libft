@@ -23,10 +23,13 @@ int		ft_str_is_palindrome(char *str)
 
 	if (!str)
 		return (0);
-	i = -1;
+	i = 0;
 	j = ft_strlen(str);
 	while (i < j)
-		if (!(str[++i] == str[--j]))
+	{
+		if (!(str[i] == str[--j]))
 			return (0);
+		i += 1;
+	}
 	return (1);
 }

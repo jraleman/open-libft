@@ -20,7 +20,7 @@ int		ft_isprime(long unsigned int nbr)
 {
 	unsigned long int	i;
 
-	if (!nbr)
+	if (nbr == 0)
 		return (0);
 	i = 1;
 	while (++i <= nbr)
@@ -28,7 +28,5 @@ int		ft_isprime(long unsigned int nbr)
 		if (!(nbr % i))
 			break ;
 	}
-	if (i == nbr)
-		return (1);
-	return (0);
+	return (i == nbr ? 1 : 0);
 }

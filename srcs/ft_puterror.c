@@ -19,6 +19,5 @@
 
 void	ft_puterror(char *msg, int ret)
 {
-	ft_putendl(msg);
-	exit(ret);
+	ft_puterror_fd(msg, ret, STDOUT_FILENO);
 }

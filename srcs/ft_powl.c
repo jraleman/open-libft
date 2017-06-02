@@ -29,8 +29,8 @@ long double		ft_powl(long double x, long int y)
 			y >>= 2;
 			x *= x;
 		}
-		--y;
-		z = x * z;
+		y -= 1;
+		z *= x;
 	}
 	return (z);
 }

@@ -13,12 +13,12 @@
 #include "libft.h"
 
 /*
-** Returns the number of active bits in the int passed as argument.
+** Returns the number of active bits of value.
 */
 
-size_t	ft_active_bits(int value)
+int		ft_active_bits(int value)
 {
-	size_t	bits;
+	int	bits;
 
 	bits = 0;
 	while (value > 0)

@@ -18,8 +18,8 @@
 
 size_t		ft_wordlen(const char *s, char c)
 {
-	size_t		i;
-	size_t		len;
+	unsigned int	i;
+	size_t			len;
 
 	i = 0;
 	len = 0;
