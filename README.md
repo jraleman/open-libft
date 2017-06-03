@@ -23,20 +23,24 @@ You can use the following commands:
 * `make` : compiles the library
 * `make clean` : remove the objects files (including the `objs/` directory).
 * `make fclean` : remove the objects files (including the `objs/` directory),
-and the library `libft.a` (including the `libs/` directory).
-* `make re` : re-compiles the library (making a fresh start).
+and the library `libft.a`.
+* `make re` : re-compiles the library, remaking everything :)
 
-The binary `libft.a` will be created inside the `libs/` directory.
+The binary `libft.a` will be created at the root of the project's directory.
 
 ## How to use it?
 
-Copy the `libs/` and `includes/` directories into the root of your project, and
+Copy the `includes/` directory into the root of your project, and
 make sure to compile your source code with the following flags:
-`gcc -L./libs -lft -I./includes <your_code.c> -o <output_name>`.
+`gcc libft.a -I./includes <your_code.c> -o <output_name>`.
 
 ## Try it!
 
-Run it with `assets/test_array.c`, a test file used for my array type functions.
+Run it with `assets/array_test.c`, a test file used for my array type functions.
 1. `make`
-2. `gcc -L./libs -lft -I./includes ./assets/test_array.c -o test_array.o`
-3. `./test_array.o`
+2. `gcc libft.a -I./includes ./assets/array_test.c -o array_test.o`
+3. `./array_test.o`
+
+Run it with `assets/printf_test.c`, a test file used for my array type functions.
+2. `gcc libft.a -I./includes ./assets/printf_test.c -o printf_test.o`
+3. `./printf_test.o`
