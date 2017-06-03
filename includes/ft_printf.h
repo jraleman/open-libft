@@ -14,10 +14,16 @@
 # define FT_PRINTF_H
 
 /*
-** Header to allow ft_printf to accept an indefinite number of arguments.
+** Accept an indefinite number of arguments.
 */
 
 # include <stdarg.h>
+
+/*
+** Includes intmax_t and uintmax_t.
+*/
+
+# include <stdint.h>
 
 /*
 ** Macro used when there's an error with the printf.
