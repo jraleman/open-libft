@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   printf_test.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,27 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+//#include "libft.h"
+#include "ft_printf.h"
 #include <stdio.h>
-#include <stdint.h>
-#include "../includes/ft_printf.h"
-
-/*
-** Simple tests...
-*/
 
 int		main(void)
 {
-	char *ptr;
-	char *np;;
-	int i;
-	unsigned int bs;
-	int mi;
-	char buf[80];
+	int				i;
+	int				mi;
+	char			*np;
+	char			*ptr;
+	char			buf[80];
+	unsigned int	bs;
 
-	ptr = "Hello world!";
-	np = NULL;
 	i = 5;
+	np = NULL;
 	bs = sizeof(int) * 8;
+	ptr = "Hello world!";
 	mi = (1 << (bs - 1)) + 1;
 
 	/* Strings */
@@ -72,7 +68,7 @@ int		main(void)
 	ft_printf("%d %s(s) with %%\n", 0, "message"));
 	printf("Return Value: 26 / %d\n",
 	ft_printf("pointer ptr = %p\n", ptr));
-	printf("Return Value: 13 / %d\n",
+	printf("Return Value: 23 / %d\n",
 	ft_printf("%s is null pointer\n", np));
 	printf("Return Value: 20 / %d\n",
 	ft_printf("%c is null character\n", '\0'));
