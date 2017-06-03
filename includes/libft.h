@@ -17,12 +17,17 @@
 ** Header files dependencies.
 */
 
-# include <errno.h>
 # include <wchar.h>
 # include <stdlib.h>
 # include <stdint.h>
 # include <unistd.h>
 # include <sys/types.h>
+
+/*
+** Header files implementation.
+*/
+
+# include "ft_errno.h"
 
 /*
 ** Attributes for printed text.
@@ -230,21 +235,21 @@ int					ft_str_is_palindrome(char *str);
 ** Functions by type stdio.h
 */
 
-void				ft_putchar(char c);
-void				ft_putchar_fd(char c, int fd);
-void				ft_putnchar(char c, int n);
-void				ft_putnchar_fd(char c, int n, int fd);
-void				ft_putstr(const char *s);
-void				ft_putstr_fd(const char *s, int fd);
-void				ft_putendl(const char *s);
-void				ft_putendl_fd(const char *s, int fd);
-void				ft_putnbr(int n);
-void				ft_putnbr_fd(int n, int fd);
-void				ft_putnbr_base(int nbr, char *base);
-void				ft_putnbr_base_fd(int nbr, char *base, int fd);
-void				ft_putunbr(uintmax_t n);
-void				ft_putnstr(char const *s, size_t len);
-void				ft_putnstr_fd(char const *str, size_t len, int fd);
+int					ft_putchar(char c);
+int					ft_putchar_fd(char c, int fd);
+int					ft_putnchar(char c, int n);
+int					ft_putnchar_fd(char c, int n, int fd);
+int					ft_putstr(char const *s);
+int					ft_putstr_fd(char const *s, int fd);
+int					ft_putendl(char const *s);
+int					ft_putendl_fd(char const *s, int fd);
+int					ft_putnbr(int n);
+int					ft_putnbr_fd(int n, int fd);
+int					ft_putnbr_base(int nbr, char *base);
+int					ft_putnbr_base_fd(int nbr, char *base, int fd);
+int					ft_putunbr(uintmax_t n);
+int					ft_putnstr(char const *s, size_t len);
+int					ft_putnstr_fd(char const *s, size_t len, int fd);
 
 /*
 ** Functions by type math.h
@@ -305,7 +310,7 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 */
 
 int					ft_array_max_value(int *arr, int length);
-size_t				ft_array_count_repeated(int *arr, size_t size);
+size_t				ft_array_repeated_count(int *arr, size_t size);
 int					*ft_array_new(size_t size);
 int					*ft_array_copy(const int *src, int *dst, \
 									size_t n_src, size_t n_dst);
@@ -353,8 +358,8 @@ char				*ft_separated_values(char **values, char c);
 void				ft_swap(int *a, int *b);
 void				ft_textstyle(int attr, int fg, int bg);
 void				ft_textstyle_reset(void);
-void				ft_puterror(char *msg, int ret);
-void				ft_puterror_fd(char *msg, int ret, int fd);
+void				ft_puterror(char const *msg, int ret);
+void				ft_puterror_fd(char const *msg, int ret, int fd);
 size_t				ft_nbrcount(const char *s, char c);
 size_t				ft_wordcount(const char *s, char c);
 size_t				ft_wordlen(const char *s, char c);
