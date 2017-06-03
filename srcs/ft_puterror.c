@@ -17,7 +17,7 @@
 ** program with a custom return value (defined by ret).
 */
 
-void	ft_puterror(char *msg, int ret)
+void	ft_puterror(char const *msg, int ret)
 {
 	ft_puterror_fd(msg, ret, STDOUT_FILENO);
 }

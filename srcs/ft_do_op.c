@@ -24,15 +24,15 @@ int		ft_do_op(int nbr1, int nbr2, char op)
 	int	result;
 
 	result = 0;
-	if (op ==  '+')
+	if (op == '+')
 		result = nbr1 + nbr2;
-	else if (op ==  '-')
+	else if (op == '-')
 		result = nbr1 - nbr2;
-	else if (op ==  '*')
+	else if (op == '*')
 		result = nbr1 * nbr2;
-	else if (op ==  '/')
+	else if (op == '/')
 		result = (nbr2 != 0) ? (nbr1 / nbr2) : result;
-	else if (op ==  '%')
+	else if (op == '%')
 		result = (nbr2 != 0) ? (nbr1 % nbr2) : result;
 	return (result);
 }

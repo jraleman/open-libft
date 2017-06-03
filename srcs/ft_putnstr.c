@@ -18,7 +18,7 @@
 ** completely.
 */
 
-void	ft_putnstr(char const *s, size_t len)
+int		ft_putnstr(const char *s, size_t len)
 {
-	ft_putnstr_fd(s, len, STDOUT_FILENO);
+	return (ft_putnstr_fd(s, len, STDOUT_FILENO));
 }

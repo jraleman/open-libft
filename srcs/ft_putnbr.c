@@ -16,7 +16,7 @@
 ** Outputs the integer n to the standard output.
 */
 
-void	ft_putnbr(int n)
+int		ft_putnbr(int n)
 {
-	ft_putnbr_fd(n, STDOUT_FILENO);
+	return (ft_putnbr_fd(n, STDOUT_FILENO));
 }

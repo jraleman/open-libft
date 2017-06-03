@@ -16,7 +16,7 @@
 ** Outputs the string s to the standard output.
 */
 
-void	ft_putstr(char const *s)
+int		ft_putstr(char const *s)
 {
-	ft_putstr(s, STDOUT_FILENO);
+	return (ft_putstr_fd(s, STDOUT_FILENO));
 }

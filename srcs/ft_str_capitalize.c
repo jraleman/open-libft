@@ -28,5 +28,5 @@ char	*ft_str_capitalize(char *s)
 		if ((ft_isspace(s[i]) || ft_ispunct(s[i])) && ft_islower(s[i + 1]))
 			s[i + 1] -= 32;
 	}
-	return (str);
+	return (s);
 }

@@ -16,8 +16,12 @@
 ** Outputs the character c to a file descriptor, n number of times.
 */
 
-void	ft_putnchar_fd(char c, int n, int fd)
+int		ft_putnchar_fd(char c, int n, int fd)
 {
-	while (n-- > 0)
-		ft_putchar_fd(c, fd);
+	int		ret;
+
+	ret = 0;
+	while (n-- > 0 && ret >= 0)
+		ret = ft_putchar_fd(c, fd);
+	return (ret);
 }

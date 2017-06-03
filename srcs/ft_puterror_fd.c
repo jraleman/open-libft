@@ -17,7 +17,7 @@
 ** program with a custom return value (defined by ret).
 */
 
-void	ft_puterror_fd(char *msg, int ret, int fd)
+void	ft_puterror_fd(char const *msg, int ret, int fd)
 {
 	ft_putendl_fd(msg, fd);
 	exit(ret);

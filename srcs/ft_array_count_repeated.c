@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_array_count_repeated.c                          :+:      :+:    :+:   */
+/*   ft_array_repeated_count.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -16,26 +16,22 @@
 ** Return total count of repeated elements in an integer array.
 */
 
-size_t		ft_array_count_repeated(int *arr, size_t size)
+size_t		ft_array_repeated_count(int *arr, size_t size)
 {
-	size_t			count;
-	unsigned int	i;
-	unsigned int	j;
+	int		i;
+	int		j;
+	size_t	count;
 
+	i = -1;
 	count = 0;
-	if (size > 1)
+	if (size < 1)
 	{
-		i = 0;
-		while (i < size)
+		while ((unsigned int)++i < size)
 		{
-			j = i;
-			while (j < size)
-			{
-				if (arr[i] == arr[j])
+			j = i + 1;
+			while ((unsigned int)j < size)
+				if (arr[i] == arr[j++])
 					count += 1;
-				j += 1;
-			}
-			i += 1;
 		}
 	}
 	return (count);

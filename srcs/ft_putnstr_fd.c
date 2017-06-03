@@ -18,11 +18,13 @@
 ** completely.
 */
 
-void	ft_putnstr_fd(char const *s, size_t len, int fd)
+int		ft_putnstr_fd(char const *s, size_t len, int fd)
 {
-	if (s)
+	if (s != NULL)
 	{
-		ft_strlen(s) < len ? len = ft_strlen(s) : len;
-		ft_putnchar(s, len, fd);
+		if (ft_strlen(s) < len)
+			len = ft_strlen(s);
+		return (write(fd, s, len));
 	}
+	return (-1);
 }

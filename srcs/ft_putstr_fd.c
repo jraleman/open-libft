@@ -16,14 +16,18 @@
 ** Outputs the string s to the file descriptor fd.
 */
 
-void	ft_putstr_fd(char const *s, int fd)
+int		ft_putstr_fd(char const *s, int fd)
 {
 	int		i;
+	int		ret;
 
 	i = 0;
+	ret = -1;
 	if (s != NULL)
 	{
-		while (s[i])
-			ft_putchar_fd(s[i++], fd);
+		ret = 0;
+		while (s[i] && ret >= 0)
+			ret = ft_putchar_fd(s[i++], fd);
 	}
+	return (ret);
 }

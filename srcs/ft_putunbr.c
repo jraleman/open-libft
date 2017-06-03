@@ -16,7 +16,7 @@
 ** Outputs the unsigned integer n to the standard output.
 */
 
-void	ft_putunbr(uintmax_t n)
+int		ft_putunbr(uintmax_t n)
 {
 	char	c;
 
@@ -30,4 +30,5 @@ void	ft_putunbr(uintmax_t n)
 		ft_putunbr(n / 10);
 		ft_putunbr(n % 10);
 	}
+	return (0);
 }

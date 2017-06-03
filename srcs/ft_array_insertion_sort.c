@@ -18,17 +18,17 @@
 
 void	ft_array_insertion_sort(int *arr, size_t size)
 {
-	int				current;
-	unsigned int	i;
-	unsigned int	j;
+	int		i;
+	int		j;
+	int		current;
 
 	i = 0;
 	j = 0;
-	while (i < size)
+	while ((unsigned int)i < size)
 	{
 		current = arr[i];
 		j = i - 1;
-		while (j > 0 && (arr[j] > current))
+		while (j >= 0 && (arr[j] > current))
 		{
 			arr[j + 1] = arr[j];
 			j -= 1;

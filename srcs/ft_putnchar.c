@@ -16,7 +16,7 @@
 ** Outputs the character c to the standard output, n number of times.
 */
 
-void	ft_putnchar(char c, int n)
+int		ft_putnchar(char c, int n)
 {
-	ft_putnchar_fd(c, n, STDOUT_FILENO);
+	return (ft_putnchar_fd(c, n, STDOUT_FILENO));
 }

@@ -18,7 +18,7 @@
 
 void	ft_array_bubble_sort(int *arr, size_t size)
 {
-	int		tmp;	
+	int				tmp;
 	unsigned int	i;
 	unsigned int	j;
 

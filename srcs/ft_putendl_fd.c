@@ -16,13 +16,7 @@
 ** Outputs the string s to the file descriptor fd followed by a ’\n’.
 */
 
-void	ft_putendl_fd(char const *s, int fd)
+int		ft_putendl_fd(char const *s, int fd)
 {
-	int		i;
-
-	i = 0;
-	if (s)
-		while (s[i])
-			write(fd, &s[i++], 1);
-	write(fd, "\n", 1);
+	return (ft_putstr_fd(s, fd) == ft_putchar_fd('\n', fd) ? 0 : -1);
 }

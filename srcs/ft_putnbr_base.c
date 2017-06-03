@@ -16,7 +16,7 @@
 ** Displays a number in a base system to the standard out.
 */
 
-void		ft_putnbr_base(int nbr, char *base)
+int		ft_putnbr_base(int nbr, char *base)
 {
-	ft_putnbr_base_fd(nbr, base, STDOUT_FILENO);
+	return (ft_putnbr_base_fd(nbr, base, STDOUT_FILENO));
 }

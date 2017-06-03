@@ -43,7 +43,7 @@ static int	check_base(char *base)
 ** Displays a number in a base system on a file descriptor.
 */
 
-void		ft_putnbr_base_fd(int nbr, char *base, int fd)
+int			ft_putnbr_base_fd(int nbr, char *base, int fd)
 {
 	int		i;
 	int		size;
@@ -52,7 +52,7 @@ void		ft_putnbr_base_fd(int nbr, char *base, int fd)
 	i = 0;
 	size = 0;
 	if (!check_base(base))
-		return ;
+		return (-1);
 	if (nbr < 0)
 	{
 		nbr *= -1;
@@ -67,5 +67,7 @@ void		ft_putnbr_base_fd(int nbr, char *base, int fd)
 		i += 1;
 	}
 	while (i > 0)
-		ft_putchar_fd(base[n[--i]], fd);
+		if (ft_putchar_fd(base[n[--i]], fd) < 0)
+			return (-1);
+	return (0);
 }
