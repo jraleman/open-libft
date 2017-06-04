@@ -27,7 +27,7 @@
 ** Header files implementation.
 */
 
-# include "ft_errno.h"
+//# include "ft_errno.h"
 
 /*
 ** Attributes for printed text.
@@ -140,6 +140,18 @@ typedef struct		s_stack
 	double			value;
 	struct s_stack	*next;
 }					t_stack;
+
+/*
+** List of globla variables.
+*/
+
+# ifndef GLOBAL_VAR
+#  define GLOBAL_VAR
+
+static const unsigned long	g_mask01;
+static const unsigned long	g_mask80;
+
+# endif
 
 /*
 ** Functions by type stdlib.h
