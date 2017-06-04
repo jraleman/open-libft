@@ -60,11 +60,11 @@ size_t		ft_strlen(const char *s)
 	const unsigned long	*lptr;
 
 	x = 0;
-	ptr = str;
+	ptr = s;
 	while ((uintptr_t)ptr & sizeof(long) - 1)
 	{
 		if (*ptr == '\0')
-			return (ptr - str);
+			return (ptr - s);
 		ptr += 1;
 	}
 	lptr = (const unsigned long *)ptr;
@@ -78,5 +78,5 @@ size_t		ft_strlen(const char *s)
 		}
 		lptr += 1;
 	}
-	return (ptr - str + x);
+	return (ptr - s + x);
 }
