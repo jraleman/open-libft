@@ -27,7 +27,7 @@
 ** Header files implementation.
 */
 
-//# include "ft_errno.h"
+# include "ft_errno.h"
 
 /*
 ** Attributes for printed text.
