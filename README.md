@@ -41,6 +41,10 @@ Run it with `assets/array_test.c`, a test file used for my array type functions.
 2. `gcc libft.a -I./includes ./assets/array_test.c -o array_test.o`
 3. `./array_test.o`
 
-Run it with `assets/printf_test.c`, a test file used for my array type functions.
+Run it with `assets/printf_test.c`, a test file used to test ft_printf.
 2. `gcc libft.a -I./includes ./assets/printf_test.c -o printf_test.o`
 3. `./printf_test.o`
+
+Run it with `assets/errno_test.c`, a test file used for to test ft_errno.h.
+2. `gcc libft.a -I./includes ./assets/errno_test.c -o errno_test.o`
+3. `./errno_test.o`
