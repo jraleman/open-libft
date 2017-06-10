@@ -8,9 +8,15 @@ insert_final_newline = true
 
 # Matches multiple files with brace expansion notation
 # Set default charset
-[*.{js,jsx,html,sass}]
+[*.{c,h}, Makefile]
 charset = utf-8
-indent_style = tab
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+
+[Makefile]
+charset = utf-8
+indent_style = space
 indent_size = 4
 trim_trailing_whitespace = true
 
