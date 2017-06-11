@@ -267,6 +267,7 @@ int					ft_putnstr_fd(char const *s, size_t len, int fd);
 ** Functions by type math.h
 */
 
+int					ft_abs(int i);
 int					ft_min(int x, int y);
 int					ft_min(int x, int y);
 int					ft_isprime(long unsigned int nbr);
