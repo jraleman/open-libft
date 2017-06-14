@@ -32,7 +32,8 @@ The binary `libft.a` will be created at the root of the project's directory.
 
 Copy the `includes/` directory into the root of your project, and
 make sure to compile your source code with the following flags:
-`gcc libft.a -I./includes <your_code.c> -o <output_name>`.
+
+  `gcc libft.a -I./includes <your_code.c> -o <output_name>`.
 
 ## Try it!
 
