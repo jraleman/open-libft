@@ -33,7 +33,7 @@
 # define GNL_RET_VAL(ret)	(ret > 0 ? 1 : ret)
 
 /*
-** Prototype for the get_next_line() function.
+** get_next_line function prototype.
 */
 
 int		get_next_line(int const fd, char **line);

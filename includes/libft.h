@@ -28,6 +28,8 @@
 */
 
 # include "ft_errno.h"
+# include "ft_printf.h"
+# include "get_next_line.h"
 
 /*
 ** Attributes for printed text.
@@ -121,7 +123,7 @@ typedef enum		e_bool
 }					t_bool;
 
 /*
-** Define the structure called t_list, for ft_lst* function.
+** Linked list structure.
 */
 
 typedef struct		s_list
@@ -132,7 +134,7 @@ typedef struct		s_list
 }					t_list;
 
 /*
-** Define the structure called t_stack, for ft_stck* function.
+** Stack structure.
 */
 
 typedef struct		s_stack
@@ -142,7 +144,7 @@ typedef struct		s_stack
 }					t_stack;
 
 /*
-** List of globla variables.
+** List of globlal variables.
 */
 
 # ifndef GLOBAL_VAR
