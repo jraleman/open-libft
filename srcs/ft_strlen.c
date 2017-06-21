@@ -61,7 +61,7 @@ size_t		ft_strlen(const char *s)
 
 	x = 0;
 	ptr = s;
-	while ((uintptr_t)ptr & sizeof(long) - 1)
+	while (((uintptr_t)ptr & sizeof(long)) - 1)
 	{
 		if (*ptr == '\0')
 			return (ptr - s);
