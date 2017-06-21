@@ -17,7 +17,7 @@
 ** If nbr is over 135, returns minus one (-1), indicating an error.
 */
 
-int		ft_errno(unsigned int nbr)
+int		ft_errno(int nbr)
 {
-	return (nbr < 135 ? nbr : -1);
+	return ((nbr <= 134 && nbr >= 0) ? nbr : -1);
 }

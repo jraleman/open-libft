@@ -161,7 +161,7 @@ char	*g_errno[] =
 ** If nbr is over 135, returns NULL.
 */
 
-char	*ft_strerror(unsigned int nbr)
+char	*ft_strerror(int nbr)
 {
-	return (nbr < 135 ? g_errno[nbr] : NULL);
+	return ((nbr <= 134 && nbr >= 0) ? g_errno[nbr] : NULL);
 }
