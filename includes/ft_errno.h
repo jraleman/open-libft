@@ -168,7 +168,7 @@ extern char		*g_errno[];
 ** Prototypes
 */
 
-int		ft_errno(unsigned int nbr);
-char	*ft_strerror(unsigned int nbr);
+int		ft_errno(int nbr);
+char	*ft_strerror(int nbr);
 
 #endif
