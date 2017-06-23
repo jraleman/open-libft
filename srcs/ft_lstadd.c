@@ -13,7 +13,7 @@
 #include "libft.h"
 
 /*
-** Adds the element new at the beginnning of the list.
+** Adds the element new at the beginn of a list.
 */
 
 void	ft_lstadd(t_list **alst, t_list *new)
