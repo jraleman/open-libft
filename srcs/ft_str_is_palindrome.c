@@ -14,22 +14,23 @@
 
 /*
 ** Checks if the string is palindrome.
+** If string is NULL, returns zero (0).
 */
 
 int		ft_str_is_palindrome(char *str)
 {
-	int		i;
-	int		j;
+	int		ret;
+	char	*str1;
+	char	*str2;
 
-	if (!str)
-		return (0);
-	i = 0;
-	j = ft_strlen(str);
-	while (i < j)
+	ret = 0;
+	if (str)
 	{
-		if (!(str[i] == str[--j]))
-			return (0);
-		i += 1;
+		str1 = ft_str_remove_whitespace(str);
+		str2 = ft_str_remove_whitespace(ft_strrev(str));
+		ret = ft_strequ(str1, str2);
+		free(str1);
+		free(str2);
 	}
-	return (1);
+	return (ret);
 }
