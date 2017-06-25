@@ -27,6 +27,7 @@
 ** Header files implementation.
 */
 
+# include "btree.h"
 # include "ft_errno.h"
 # include "ft_printf.h"
 # include "get_next_line.h"
@@ -111,6 +112,19 @@
 # define FT_BIT(x)			(1 << (x))
 # define FT_STRCMP(A, o, B)	(ft_strcmp((A), (B)) o 0)
 # define FT_MEMCMP(A, o, B)	(ft_memcmp((A), (B)) o 0)
+# define FT_ISDIGIT(a) (a >= 48 && a <= 57)
+# define FT_ISUPPER(a) (a >= 'A' && a <= 'Z')
+# define FT_ISLOWER(a) (a >= 'a' && a <= 'z')
+# define FT_ISALPHA(a) (FT_ISUPPER(a) || FT_ISLOWER(a))
+# define FT_ISALNUM(a) (FT_ISALPHA(a) || FT_ISDIGIT(a))
+# define FT_ISASCII(a) (a >= 0 && a <= 127)
+# define FT_ISBLANK(a) (a == ' ' || a == '\t')
+# define FT_ISCNTRL(a) ((a >= 0 && a <= 37) || (a == 127))
+# define FT_ISGRAPH(a) (a >= 33 && a <= 126)
+# define FT_ISPRINT(a) (a >= 32 && a <= 126)
+# define FT_ISSPACE(a) ((a >= 9 && a <= 13) || (a == 32))
+# define FT_TOLOWER(a) (a >= 'A' && a <= 'Z' ? a + 32 : a)
+# define FT_TOUPPER(a) (a >= 'a' && a <= 'z' ? a - 32 : a)
 
 /*
 ** Define the bool typedef to use for older compilers.
@@ -165,8 +179,6 @@ char				*ft_itoa(int n);
 char				*ft_itoa_base(int value, int base);
 void				*ft_realloc(void *ptr, size_t size);
 void				*ft_calloc(size_t count, size_t size);
-void				ft_qsort(void *base, size_t nmemb, \
-								size_t size, int (*fcmp)(void *, void *));
 
 /*
 ** Functions by type string.h
@@ -181,11 +193,13 @@ char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
+char				*ft_strnchr(char *s, char c, int offset);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t len);
 char				*ft_strstr(const char *big, const char *little);
 char				*ft_strnstr(const char *big, const char *little, size_t ln);
 char				*ft_strdup(const char *s1);
+char				*ft_strndup(const char *s, size_t n);
 char				*ft_strnew(size_t size);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strmap(const char *s, char (*f)(char));
@@ -207,6 +221,7 @@ void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_memalloc(size_t size);
 size_t				ft_strlen(const char *str);
+size_t				ft_strnlen(const char *src, size_t maxlen);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 
@@ -238,12 +253,6 @@ int					ft_islower(int c);
 int					ft_isxdigit(int c);
 int					ft_iswspace(int c);
 int					ft_ismathop(int c);
-int					ft_is_little_endian(void);
-int					ft_str_is_lowercase(char *str);
-int					ft_str_is_numeric(char *str);
-int					ft_str_is_printable(char *str);
-int					ft_str_is_uppercase(char *str);
-int					ft_str_is_palindrome(char *str);
 
 /*
 ** Functions by type stdio.h
@@ -313,10 +322,14 @@ wchar_t				*ft_wcsncpy(wchar_t *dst, const wchar_t *src, size_t n);
 ** Functions by type list.h
 */
 
+void				ft_lstfree(t_list **alst);
 void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstaddback(t_list **alst, t_list *new);
+void				ft_lstappend(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+t_list				*ft_lstreverse(t_list *alst);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
@@ -325,7 +338,6 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 */
 
 int					ft_array_max_value(int *arr, int length);
-size_t				ft_array_repeated_count(int *arr, size_t size);
 int					*ft_array_new(size_t size);
 int					*ft_array_copy(const int *src, int *dst, \
 									size_t n_src, size_t n_dst);
@@ -333,12 +345,13 @@ int					*ft_array_rotate_left(int *arr, size_t size, \
 											unsigned int tms);
 int					*ft_array_rotate_right(int *arr, size_t size, \
 											unsigned int tms);
-int					*ft_array_do_op(int *arr, size_t size, char op, int val);
 int					*ft_array_pop(int *arr, size_t size, unsigned int pos);
+int					*ft_array_do_op(int *arr, size_t size, char op, int val);
+void				ft_array_delete(int *arr);
 void				ft_array_print(int *arr, size_t size, char *encl);
 void				ft_array_bubble_sort(int *arr, size_t size);
 void				ft_array_insertion_sort(int *arr, size_t size);
-void				ft_array_delete(int *arr);
+size_t			ft_array_repeated_count(int *arr, size_t size);
 
 /*
 ** Functions by type matrix.h
@@ -362,6 +375,15 @@ double				ft_stck_pop(t_stack *top);
 int					ft_active_bits(int value);
 int					ft_angle_to_degrees(int angle);
 int					ft_compact(char **tab, int length);
+int					ft_is_big_endian(void);
+int					ft_is_little_endian(void);
+int					ft_str_is_lowercase(char *str);
+int					ft_str_is_numeric(char *str);
+int					ft_str_is_printable(char *str);
+int					ft_str_is_uppercase(char *str);
+int					ft_str_is_palindrome(char *str);
+int					ft_str_starts_with(char *s1, char *s2);
+int					ft_str_ends_with(char *s1, char *s2);
 int					ft_do_op(int nbr1, int nbr2, char op);
 int					ft_file_extension(char *file, char *ext);
 char				*ft_str_capitalize(char *str);
@@ -369,6 +391,7 @@ char				*ft_str_to_upcase(char *str);
 char				*ft_str_to_lowcase(char *str);
 char				*ft_program_name(char const *argv0);
 char				*ft_remove_extension(char *filename);
+char   			*ft_str_remove_whitespace(char *str);
 char				*ft_separated_values(char **values, char c);
 void				ft_swap(int *a, int *b);
 void				ft_textstyle(int attr, int fg, int bg);
