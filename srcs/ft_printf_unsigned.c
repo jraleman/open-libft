@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_printf.h"
 
 /*
 ** Used for not decimal values (octal, hexadecimal, and pointer address).
@@ -56,15 +55,15 @@ int			get_nbr_zeroes(t_prntf *attr, int *len, int sign)
 ** Gets the number of spaces from the flags and the precision values.
 */
 
-int			get_nbr_spaces(int attr, int minw, int *len)
+int			get_nbr_spaces(int attr, int min_width, int *len)
 {
 	int		nbr_spaces;
 
 	nbr_spaces = 0;
 	if (attr & WIDTH && (!(attr & ZERO) || attr & MINUS || attr & PRECISION) \
-		&& minw > *len)
+		&& min_width > *len)
 	{
-		nbr_spaces += minw - *len;
+		nbr_spaces += min_width - *len;
 		*len += nbr_spaces;
 	}
 	return (nbr_spaces);
@@ -111,7 +110,7 @@ char		*get_nbr_unsigned(uintmax_t nbr, int *nbr_digits, int base)
 ** God bless you trying to understand this shit.
 */
 
-int			format_unsigned(uintmax_t nbr, t_prntf *attr, \
+int			format_unsigned(uintmax_t nbr, t_prntf *attr, int fd, \
 							char *(*convert)(uintmax_t, int *))
 {
 	int		len;
@@ -128,14 +127,14 @@ int			format_unsigned(uintmax_t nbr, t_prntf *attr, \
 	len += sign;
 	nbr_zeros = get_nbr_zeroes(attr, &len, (sign == 2) ? 2 : 0);
 	nbr_spaces = get_nbr_spaces(attr->flags, attr->width, &len);
-	!(attr->flags & MINUS) ? ft_putnchar(' ', nbr_spaces) : 0;
-	not_decimal(nbr, attr->flags, attr->precision) ? ft_putchar('0') : 0;
+	!(attr->flags & MINUS) ? ft_putnchar_fd(' ', nbr_spaces, fd) : 0;
+	not_decimal(nbr, attr->flags, attr->precision) ? ft_putchar_fd('0', fd) : 0;
 	if (not_decimal(nbr, attr->flags, attr->precision) > 1)
-		attr->flags & UPP_X_BIT ? ft_putchar('X') : ft_putchar('x');
-	ft_putnchar('0', nbr_zeros);
+		attr->flags & UPP_X_BIT ? ft_putchar_fd('X', fd) : ft_putchar_fd('x', fd);
+	ft_putnchar_fd('0', nbr_zeros, fd);
 	if (!(attr->flags & PRECISION && !attr->precision && !nbr))
-		ft_putstr(nbr_converted);
+		ft_putstr_fd(nbr_converted, fd);
 	free(nbr_converted);
-	(attr->flags & MINUS) ? ft_putnchar(' ', nbr_spaces) : 0;
+	(attr->flags & MINUS) ? ft_putnchar_fd(' ', nbr_spaces, fd) : 0;
 	return (len);
 }

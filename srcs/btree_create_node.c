@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "btree.h"
+#include "libft.h"
 
 /*
 ** Allocates a new element to a binary tree.

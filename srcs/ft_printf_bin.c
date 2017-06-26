@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_printf.h"
 
 /*
 ** Converts the number to base two (2) (binary), using the get_nbr_unsigned
@@ -28,7 +27,7 @@ static char	*convert_binary(uintmax_t nbr, int *nbr_digits)
 ** length gotten with the flags.
 */
 
-int			print_binary(va_list ap, t_prntf *attr)
+int			print_binary(va_list ap, t_prntf *attr, int fd)
 {
 	int		len;
 

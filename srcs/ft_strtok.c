@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+** ...
+*/
+
 char	*ft_strtok(char *str, const char delim)
 {
 	static char		*stock = NULL;

@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_printf.h"
 
 /*
 ** Gets every specifier position from the format.

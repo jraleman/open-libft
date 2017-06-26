@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_printf.h"
 
 /*
 ** Converts the number to base eight (8) (octal), using the get_nbr_unsigned
@@ -28,7 +27,7 @@ static char	*convert_octal(uintmax_t nbr, int *nbdig)
 ** length gotten with the flags.
 */
 
-int			print_octal(va_list ap, t_prntf *attr)
+int			print_octal(va_list ap, t_prntf *attr, int fd)
 {
 	int		len;
 

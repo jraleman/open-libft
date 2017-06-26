@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "get_next_line.h"
 
 /*
 ** Verify if whatever is in the stack, there's a newline. If it doesn't, returns

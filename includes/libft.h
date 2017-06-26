@@ -28,8 +28,20 @@
 */
 
 # include "btree.h"
+# include "ft_math.h"
+# include "ft_list.h"
+# include "ft_array.h"
 # include "ft_errno.h"
+# include "ft_ctype.h"
+# include "ft_stack.h"
+# include "ft_stdio.h"
+# include "ft_wchar.h"
+# include "ft_matrix.h"
 # include "ft_printf.h"
+# include "ft_stdlib.h"
+# include "ft_string.h"
+# include "ft_strings.h"
+# include "ft_classics.h"
 # include "get_next_line.h"
 
 /*

@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_printf.h"
 
 /*
 ** Prints number of spaces.
@@ -19,9 +18,14 @@
 
 int		print_spaces(int width, int len, int attr)
 {
+	char	space;
+
+// put it outside?
+	//space = ((attr & ZERO) && !(attr & MINUS)) ? '0' : ' ';
 	while ((width - len) > 0)
 	{
-		ft_putchar(((attr & ZERO) && !(attr & MINUS)) ? '0' : ' ');
+		space = ((attr & ZERO) && !(attr & MINUS)) ? '0' : ' ';
+		ft_putchar(space, fd);
 		len += 1;
 	}
 	return (len);
@@ -48,10 +52,10 @@ int		print_wide_string(va_list ap, t_prntf *attr)
 	}
 	len = ft_wcslen(str);
 	if (!(attr->flags & MINUS))
-		len = print_spaces(attr->width, len, attr->flags);
+		len = print_spaces(attr->width, len, attr->flags, fd);
 	ft_putwstr(str);
 	if (attr->flags & MINUS)
-		len = print_spaces(attr->width, len, attr->flags);
+		len = print_spaces(attr->width, len, attr->flags, fd);
 	return (len);
 }
 
@@ -67,10 +71,10 @@ int		print_wide_character(va_list ap, t_prntf *attr)
 	c = va_arg(ap, wint_t);
 	len = ft_wclen(c);
 	if (!(attr->flags & MINUS))
-		len = print_spaces(attr->width, len, attr->flags);
+		len = print_spaces(attr->width, len, attr->flags, fd);
 	ft_putwchar(c);
 	if (attr->flags & MINUS)
-		len = print_spaces(attr->width, len, attr->flags);
+		len = print_spaces(attr->width, len, attr->flags, fd);
 	return (len);
 }
 
@@ -97,10 +101,10 @@ int		print_string(va_list ap, t_prntf *attr)
 	}
 	len = ft_strlen(str);
 	if (!(attr->flags & MINUS))
-		len = print_spaces(attr->width, len, attr->flags);
+		len = print_spaces(attr->width, len, attr->flags, fd);
 	ft_putstr(str);
 	if (attr->flags & MINUS)
-		len = print_spaces(attr->width, len, attr->flags);
+		len = print_spaces(attr->width, len, attr->flags, fd);
 	return (len);
 }
 
@@ -114,13 +118,13 @@ int		print_character(va_list ap, t_prntf *attr)
 	char	c;
 
 	if (attr->flags & L)
-		return (print_wide_character(ap, attr));
+		return (print_wide_character(ap, attr, fd));
 	c = va_arg(ap, int);
 	len = sizeof(char);
 	if (!(attr->flags & MINUS))
-		len = print_spaces(attr->width, len, attr->flags);
-	ft_putchar(c);
+		len = print_spaces(attr->width, len, attr->flags, fd);
+	ft_putchar_fd(c, fd);
 	if (attr->flags & MINUS)
-		len = print_spaces(attr->width, len, attr->flags);
+		len = print_spaces(attr->width, len, attr->flags, fd);
 	return (len);
 }

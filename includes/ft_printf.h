@@ -38,8 +38,9 @@
 typedef struct		s_prntf
 {
 	int		flags;
-	int		precision;
 	int		width;
+	int		specifier;
+	int		precision;
 }					t_prntf;
 
 /*
@@ -54,7 +55,7 @@ typedef struct		s_prntf
 ** @ b      : Binary
 */
 
-# define SPECIFIERS	"sSpdDioOuUxXcCb"
+# define SPECIFIERS	"sSpdDioOuUxXcCbz"
 # define SPECI_SIZE	(ft_strlen(SPECIFIERS))
 
 /*

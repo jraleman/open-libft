@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unmatch.c                                       :+:      :+:    :+:   */
+/*   ft_array_unmatch.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -15,7 +15,7 @@
 ** corresponding pair.
 */
 
-int		ft_unmatch(int *tab, int length)
+int		ft_array_unmatch(int *tab, int length)
 {
 	int i;
 	int cur;

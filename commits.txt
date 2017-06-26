@@ -1,0 +1,14 @@
+
+Day 5:
+ft_dprintf -> create new function, change to add fd.
+ft_printf -> call ft_dprintf with stdout.
+
+//////////////////////////////
+
+In 42
+
+Day 6:
+
+split libft.h and create new header files for different kind of libraries (like ft_stdio.h, ft_stdlib.h, etc...)
+Update README.md, make it similar to Nick's.
+recheck all the comments!!!

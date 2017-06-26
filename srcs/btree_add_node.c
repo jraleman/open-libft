@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "btree.h"
+#include "libft.h"
 
 /*
 ** Add a new node to a binary tree.

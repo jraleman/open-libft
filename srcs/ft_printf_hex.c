@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_printf.h"
 
 /*
 ** Gets the hexadecimal number, firstly assigning every character into the hex
@@ -85,7 +84,7 @@ static char	*conv_hex(uintmax_t nbr, int *nbr_digits)
 ** length gotten with the flags.
 */
 
-int			print_hexadecimal(va_list ap, t_prntf *attr)
+int			print_hexadecimal(va_list ap, t_prntf *attr, int fd)
 {
 	int		len;
 

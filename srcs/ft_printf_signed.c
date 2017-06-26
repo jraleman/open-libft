@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_printf.h"
 
 /*
 ** Gets the number of digits of nbr. If nbr is zero, returns a one (1).
@@ -40,7 +39,7 @@ static int	nbr_digits(intmax_t nbr)
 ** the space or the plus sign (+) will be printed.
 */
 
-static void	put_sign(intmax_t nbr, int attr)
+static void	put_sign(intmax_t nbr, int attr, int fd)
 {
 	char	sign;
 
@@ -55,7 +54,7 @@ static void	put_sign(intmax_t nbr, int attr)
 			sign = ' ';
 	}
 	if (sign)
-		ft_putchar(sign);
+		ft_putchar_fd(sign, fd);
 }
 
 /*
@@ -65,7 +64,7 @@ static void	put_sign(intmax_t nbr, int attr)
 ** God bless you trying to understand this shit.
 */
 
-int			format_signed(intmax_t nbr, t_prntf *attr)
+int			format_signed(intmax_t nbr, t_prntf *attr, int fd)
 {
 	int		len;
 	int		sign;
@@ -79,11 +78,11 @@ int			format_signed(intmax_t nbr, t_prntf *attr)
 	len += sign;
 	nbr_zeros = get_nbr_zeroes(attr, &len, (nbr < 0 || sign));
 	nbr_spaces = get_nbr_spaces(attr->flags, attr->width, &len);
-	!(attr->flags & MINUS) ? ft_putnchar(' ', nbr_spaces) : 0;
+	!(attr->flags & MINUS) ? ft_putnchar_fd(' ', nbr_spaces) : 0;
 	put_sign(nbr, attr->flags);
-	ft_putnchar('0', nbr_zeros);
+	ft_putnchar_fd('0', nbr_zeros, fd);
 	if (!(attr->flags & PRECISION && !attr->precision && !nbr))
-		ft_putunbr((nbr < 0) ? (-nbr) : (nbr));
-	(attr->flags & MINUS) ? ft_putnchar(' ', nbr_spaces) : 0;
+		ft_putunbr_fd((nbr < 0) ? (-nbr) : (nbr), fd);
+	(attr->flags & MINUS) ? ft_putnchar_fd(' ', nbr_spaces, fd) : 0;
 	return (len);
 }

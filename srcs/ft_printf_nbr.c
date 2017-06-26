@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_printf.h"
 
 /*
 ** Converts the number to base ten (10) (decimal), using the get_nbr_unsigned
@@ -85,7 +84,7 @@ static int	unsigned_nbr(va_list ap, t_prntf *attr)
 ** length gotten with the flags (from the signed_nbr or unsigned_nbr functions).
 */
 
-int			print_decimal(va_list ap, t_prntf *attr)
+int			print_decimal(va_list ap, t_prntf *attr, int fd)
 {
 	int		len;
 	int		flags;
@@ -93,8 +92,8 @@ int			print_decimal(va_list ap, t_prntf *attr)
 	len = 0;
 	flags = attr->flags;
 	if (flags & LOW_D_BIT || flags & LOW_I_BIT || flags & UPP_D_BIT)
-		len = signed_nbr(ap, attr);
+		len = signed_nbr(ap, attr, fd);
 	if (flags & LOW_U_BIT || flags & UPP_U_BIT)
-		len = unsigned_nbr(ap, attr);
+		len = unsigned_nbr(ap, attr, fd);
 	return (len);
 }
