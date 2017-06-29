@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <stdio.h>
 
-int		main(void)
+int					main(void)
 {
 	int				i;
 	int				mi;
