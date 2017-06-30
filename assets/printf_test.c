@@ -30,78 +30,78 @@ int					main(void)
 
 	/* Strings */
 	ft_printf("\n\nStrings:\n\n");
-	printf("Return Value: 13 / %d\n",
+	printf("Return Value: %d / 13\n",
 	ft_printf("%s\n", ptr));
-	printf("Return Value: 15 / %d\n",
+	printf("Return Value: %d / 15\n",
 	ft_printf("ft_printf test\n"));
 
 	/* Wide Characters */
 	ft_printf("\n\n\nWide Characters:\n\n");
-	printf("Return Value: 51 / %d\n",
+	printf("Return Value: %d / 51\n",
 	ft_printf("ο Δικαιοπολις εν αγρω εστιν\n"));
 
 	/* Octal, Decimal, Hex*/
 	ft_printf("\n\n\nNumbers:\n\n");
-	printf("Return Value: 6 / %d\n",
+	printf("Return Value: %d / 6\n",
 	ft_printf("%d = 5\n", i));
-	printf("Return Value: 24 / %d\n",
+	printf("Return Value: %d / 24\n",
 	ft_printf("%d = - max_int\n", mi));
-	printf("Return Value: 13 / %d\n",
+	printf("Return Value: %d / 13\n",
 	ft_printf("char %c = 'a'\n", 'a'));
-	printf("Return Value: 12 / %d\n",
+	printf("Return Value: %d / 12\n",
 	ft_printf("hex %x = ff\n", 0xff));
-	printf("Return Value: 12 / %d\n",
+	printf("Return Value: %d / 12\n",
 	ft_printf("hex %X = FF\n", 0xff));
-	printf("Return Value: 12 / %d\n",
+	printf("Return Value: %d / 13\n",
 	ft_printf("hex %02x = 00\n", 0));
-	printf("Return Value: 47 / %d\n",
+	printf("Return Value: %d / 47\n",
 	ft_printf("signed %d = unsigned %u = hex %x\n", -3, -3, -3));
 
 	/* Special things*/
 	ft_printf("\n\n\nSpecial things...(?):\n\n");
-	printf("Return Value: 14 / %d\n",
+	printf("Return Value: %d / 14\n",
 	ft_printf("%d %s(s)%%\n", 0, "message"));
-	printf("Return Value: 31 / %d\n",
+	printf("Return Value: %d / 31\n",
 	ft_printf("newline with n at the end: $\nn\n"));
-	printf("Return Value: 20 / %d\n",
+	printf("Return Value: %d / 20\n",
 	ft_printf("%d %s(s) with %%\n", 0, "message"));
-	printf("Return Value: 26 / %d\n",
+	printf("Return Value: %d / 26\n",
 	ft_printf("pointer ptr = %p\n", ptr));
-	printf("Return Value: 23 / %d\n",
+	printf("Return Value: %d / 23\n",
 	ft_printf("%s is null pointer\n", np));
-	printf("Return Value: 20 / %d\n",
+	printf("Return Value: %d / 20\n",
 	ft_printf("%c is null character\n", '\0'));
 
 	/* Text Justification */
 	ft_printf("\n\n\nJustify text:\n\n");
 	sprintf(buf, "justif: \"%-10s\"\n", "left");
-	printf("Return Value: 21 / %d\n",
+	printf("Return Value: %d / 21\n",
 	ft_printf("%s", buf));
 	sprintf(buf, "justif: \"%10s\"\n", "right");
-	printf("Return Value: 21 / %d\n",
+	printf("Return Value: %d / 21\n",
 	ft_printf("%s", buf));
 	sprintf(buf, " 3: %04d zero padded\n", 3);
-	printf("Return Value: 21 / %d\n",
+	printf("Return Value: %d / 21\n",
 	ft_printf("%s", buf));
 	sprintf(buf, " 3: %-4d left justif.\n", 3);
-	printf("Return Value: 22 / %d\n",
+	printf("Return Value: %d / 22\n",
 	ft_printf("%s", buf));
 	sprintf(buf, " 3: %4d right justif.\n", 3);
-	printf("Return Value: 23 / %d\n",
+	printf("Return Value: %d / 23\n",
 	ft_printf("%s", buf));
 	sprintf(buf, "-3: %04d zero padded\n", -3);
-	printf("Return Value: 21 / %d\n",
+	printf("Return Value: %d / 21\n",
 	ft_printf("%s", buf));
 	sprintf(buf, "-3: %-4d left justif.\n", -3);
-	printf("Return Value: 22 / %d\n",
+	printf("Return Value: %d / 22\n",
 	ft_printf("%s", buf));
 	sprintf(buf, "-3: %4d right justif.\n", -3);
-	printf("Return Value: 23 / %d\n",
+	printf("Return Value: %d / 23\n",
 	ft_printf("%s", buf));
 
 	/* Emojis */
 	ft_printf("\n\n\nEmojis:\n\n");
-	printf("Return Value: 519 / %d\n",
+	printf("Return Value: %d / 519\n",
 	ft_printf("😀 😃 😄 😁 😆 😅 😂 😊 😇 😉 😌 😍 😘 😗 😙 😚 😋 😜 😝 😛 😎 😏 😒 😞 "
 	"😔 😟 😕 🙁 😣 😖 😫 😩 😤 😠 😡 😶 😐 😑 😯 😦 😧 😮 😲 😵 😳 😱 😨 😰 😢 😥 😭 "
 	"😓 😪 😴 🙄 🤔 😬 😷 😈 👿 👹 👺 💩 👻 💀 👽 👾 🤖 🎃 😺 😸 😹 😻 😼 😽 🙀 😿 😾 "
@@ -109,7 +109,7 @@ int					main(void)
 
 	/* Long Ass String */
 	ft_printf("\n\n\nCool story:\n\n");
-	printf("Return Value: 1561 / %d\n",
+	printf("Return Value: %d / 1561\n",
 	ft_printf("What the fuck did you just fucking say about me, you little \n"
 	"bitch? I’ll have you know I graduated top of my class in the Navy \n"
 	"Seals, and I’ve been involved in numerous secret raids on Al-Quaeda, \n"
