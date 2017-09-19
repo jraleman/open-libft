@@ -25,13 +25,14 @@ OBJS    := $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 # Define all the compiling flags.
 CC      := gcc
-CFLAGS  += -Wall -Wextra -Werror
+CFLAGS  += -Wall -Werror -Wextra -g -fno-omit-frame-pointer -fsanitize=address
 LFLAGS  += -I.
 AR      := ar rcs
 RLIB    := ranlib
 
 # Compile and create everything.
-all:	obj $(NAME)
+all:	obj
+		$(MAKE) -j $(NAME)
 
 # Creates the object files' directory.
 obj:
