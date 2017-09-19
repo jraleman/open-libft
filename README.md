@@ -1,6 +1,6 @@
 ## Libft
 
-<libft-logo>
+<img src="resources/libft-logo.png" style="width: 250px; height:100%" />
 
 ### Table of Content
 * [About libft](#about-libft)
@@ -17,7 +17,7 @@
 # About libft
 
 Implementation of some of the Standard C Library functions, plus some additional
-ones. This library has been used throughout my academic career in 
+ones. This library has been used throughout my academic career in
 [École 42](http://42.us.org).
 
 ### Norminette
@@ -98,11 +98,13 @@ Run it with `assets/array_test.c`, a test file used for my array type functions.
 ### Printf
 
 Run it with `assets/printf_test.c`, a test file used to test ft_printf.
+1. `make`
 2. `gcc libft.a -I./includes ./assets/printf_test.c -o printf_test.o`
 3. `./printf_test.o`
 
 ### Errno
 
 Run it with `assets/errno_test.c`, a test file used for to test ft_errno.h.
+1. `make`
 2. `gcc libft.a -I./includes ./assets/errno_test.c -o errno_test.o`
 3. `./errno_test.o`
