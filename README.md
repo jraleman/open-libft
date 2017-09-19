@@ -1,6 +1,6 @@
 ## Libft
 
-<img src="resources/libft-logo.png" style="width: 250px; height:100%" />
+[![Build Status](https://travis-ci.org/jraleman/libft.svg?branch=master)](https://travis-ci.org/jraleman/libft)
 
 ### Table of Content
 * [About libft](#about-libft)
@@ -16,9 +16,12 @@
 
 # About libft
 
+<img src="resources/libft-logo.png" width=250 />
+
 Implementation of some of the Standard C Library functions, plus some additional
 ones. This library has been used throughout my academic career in
-[École 42](http://42.us.org).
+[École 42](http://42.us.org). It incorporates very useful functions, such as
+binary trees, linked lists, stack, arrays, bit manipulation, etc...
 
 ### Norminette
 
