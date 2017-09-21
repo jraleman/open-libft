@@ -1,21 +1,22 @@
 ## Libft
 
 [![Build Status](https://travis-ci.org/jraleman/libft.svg?branch=master)](https://travis-ci.org/jraleman/libft) ![Norminette](https://img.shields.io/badge/norminette-failing-yellow.svg)
-![License](https://img.shields.io/badge/standard-ANSI%20C89-lightgrey.svg)
+![Standard](https://img.shields.io/badge/standard-ANSI%20C89-lightgrey.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ### Table of Content
+
 1. [About libft](#about-libft)
 2. [Norminette](#norminette)
 3. [Functions](#functions)
 4. [Setup](#setup)
 5. [Install](#install)
-  1. [local](#local)
-  2. [global](#global)
+	1. [local](#local)
+	2. [global](#global)
 6. [Manual Tests](#manual-tests)
-  1. [arrays](#arrays)
-  2. [printf](#printf)
-  3. [errno](#errno)
+	1. [arrays](#arrays)
+	2. [printf](#printf)
+	3. [errno](#errno)
 7. [License](#license)
 
 # About libft <a name="about-libft"></a>
@@ -86,7 +87,7 @@ Command       |  Description
 
 The binary `libft.a` will be created at the root of the project's directory.
 
-## Install <a name="about-libft"></a>
+## Install <a name="install"></a>
 
 ### Local <a name="local"></a>
 
