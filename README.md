@@ -1,20 +1,24 @@
 ## Libft
 
-[![Build Status](https://travis-ci.org/jraleman/libft.svg?branch=master)](https://travis-ci.org/jraleman/libft)
+[![Build Status](https://travis-ci.org/jraleman/libft.svg?branch=master)](https://travis-ci.org/jraleman/libft) ![Norminette](https://img.shields.io/badge/norminette-failing-yellow.svg)
+![License](https://img.shields.io/badge/standard-ANSI C89-lightgrey.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ### Table of Content
-* [About libft](#about-libft)
-* [List of functions](##how-to-use-it)
-* [How to compile it](##how-to-compile-it)
-* [How to use it](##how-to-use-it)
-* [libunit test](##libunit-test)
-* [Try it](##try-it)
-  1. [arrays](###arrays)
-  2. [printf](###printf)
-  3. [errno](###errno)
-* [More Info](#more-info)
+1. [About libft](#about-libft)
+2. [Norminette](#norminette)
+3. [Functions](#functions)
+4. [Setup](#setup)
+5. [Install](#install)
+  1. [local](#local)
+  2. [global](#global)
+6. [Manual Tests](#manual-tests)
+  1. [arrays](#arrays)
+  2. [printf](#printf)
+  3. [errno](#errno)
+7. [License](#license)
 
-# About libft
+# About libft <a name="about-libft"></a>
 
 <img src="resources/libft-logo.png" width=250 />
 
@@ -23,7 +27,7 @@ ones. This library has been used throughout my academic career in
 [École 42](http://42.us.org). It incorporates very useful functions, such as
 binary trees, linked lists, stack, arrays, bit manipulation, etc...
 
-### Norminette
+## Norminette <a name="norminette"></a>
 
 All of these functions follows the applicable styleguide standard (the norm).
 
@@ -36,18 +40,15 @@ To install norminette, run the following commands:
 Run it in the following way:
 * `norminette <path-to-c-files>`
 
-## List of Functions
+## Functions <a name="functions"></a>
 
 For the sake of keeping everything neat and in order, I separated the functions'
-declarations into different header files, corresponding to the behaviour of
+declarations into different header files, corresponding to the behavior of
 such functions.
 For instance, ft_strlen can be found in ft_string.h.
-
 Also, some of the functions included don't exist in the Standard C Library,
-but I still kept them defined by there behaviour.
+but I still kept them defined by there behavior.
 For example, ft_strnew can also be in ft_string.h.
-
-### Header files and functions
 
 Header File          | Functions
 :-------------------:|:---------:
@@ -69,45 +70,64 @@ Header File          | Functions
 **get_next_line.h**  | get_next_line
 
 
-## How to Compile it
+## Setup <a name="setup"></a>
 
 Download the repository, and compile the library using the Makefile.
 You can use the following commands:
 
-* `make` : compiles the library
-* `make clean` : remove the objects files (including the `objs/` directory).
-* `make fclean` : remove the objects files (including the `objs/` directory),
-and the library `libft.a`.
-* `make re` : re-compiles the library, remaking everything :)
+Command       |  Description
+:-------------|:-------------
+`make`        | Compile the library.
+`make clean`  | Remove objects files.
+`make fclean` | Remove objects files and the library.
+`make re`     | Re-compile the library.
+`make test`   | Compile the library, runs a series of tests.
+`make install`| Install the library.
 
 The binary `libft.a` will be created at the root of the project's directory.
 
-## How to Use it
+## Install <a name="about-libft"></a>
+
+### Local <a name="local"></a>
 
 Copy the `includes/` directory into the root of your project, and
 make sure to compile your source code with the following flags:
 
-  `gcc libft.a -I./includes <your_file.c> -o <output_name>`.
+	gcc libft.a -I./includes <your_file.c> -o <output_name>
 
-## Try it
+### Global <a name="global"></a>
 
-### Arrays
+Run the following command :
+
+	make install
+
+Now you can add the `<libft.h>` header in your .c files!
+
+## Manual Tests <a name="manual-tests"></a>
+
+You can also run some manual tests, like the following way:
+
+### Arrays <a name="arrays"></a>
 
 Run it with `assets/array_test.c`, a test file used for my array type functions.
 1. `make`
 2. `gcc libft.a -I./includes ./assets/array_test.c -o array_test.o`
 3. `./array_test.o`
 
-### Printf
+### Printf <a name="printf"></a>
 
 Run it with `assets/printf_test.c`, a test file used to test ft_printf.
 1. `make`
 2. `gcc libft.a -I./includes ./assets/printf_test.c -o printf_test.o`
 3. `./printf_test.o`
 
-### Errno
+### Errno <a name="errno"></a>
 
 Run it with `assets/errno_test.c`, a test file used for to test ft_errno.h.
 1. `make`
 2. `gcc libft.a -I./includes ./assets/errno_test.c -o errno_test.o`
 3. `./errno_test.o`
+
+## License <a name="license"></a>
+
+This project is under the MIT License.
