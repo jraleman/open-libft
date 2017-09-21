@@ -1,7 +1,7 @@
 ## Libft
 
 [![Build Status](https://travis-ci.org/jraleman/libft.svg?branch=master)](https://travis-ci.org/jraleman/libft) ![Norminette](https://img.shields.io/badge/norminette-failing-yellow.svg)
-![License](https://img.shields.io/badge/standard-ANSI C89-lightgrey.svg)
+![License](https://img.shields.io/badge/standard-ANSI%20C89-lightgrey.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ### Table of Content
