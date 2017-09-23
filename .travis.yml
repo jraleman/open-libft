@@ -1,0 +1,9 @@
+language: c
+compiler:
+  - clang
+  - gcc
+install: make test
+script:
+  - gem install norminette --pre
+  - gem install --user-install json -v 1.8.3
+  - sh norminette/check_norme.sh srcs includes
