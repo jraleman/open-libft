@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 /*
 ** Returns the value of the element in the array that doesn’t have a
 ** corresponding pair.
