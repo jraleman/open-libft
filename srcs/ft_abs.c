@@ -13,7 +13,7 @@
 #include "libft.h"
 
 /*
-** ...
+** Computes the absolute value of the integer i.
 */
 
 int		ft_abs(int i)
