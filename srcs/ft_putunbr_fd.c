@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaleman <jaleman@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,10 +13,22 @@
 #include "libft.h"
 
 /*
-** Outputs the unsigned integer n to the standard output.
+** Outputs the unsigned integer n to a file descriptor.
 */
 
-int		ft_putunbr(uintmax_t n)
+int		ft_putunbr_fd(uintmax_t n, int fd)
 {
-	return (ft_putunbr_fd(n, STDOUT_FILENO));
+	char	c;
+
+	if (n < 10)
+	{
+		c = n + '0';
+		ft_putchar_fd(c, fd);
+	}
+	else
+	{
+		ft_putunbr_fd(n / 10, fd);
+		ft_putunbr_fd(n % 10, fd);
+	}
+	return (0);
 }
