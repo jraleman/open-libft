@@ -1,4 +1,6 @@
-## Libft
+<img src="resources/libft-logo.png" width=250 />
+
+## Open Libft
 
 [![Build Status](https://travis-ci.org/jraleman/libft.svg?branch=master)](https://travis-ci.org/jraleman/libft) ![Norminette](https://img.shields.io/badge/norminette-failing-yellow.svg)
 ![Standard](https://img.shields.io/badge/standard-ANSI%20C89-lightgrey.svg)
@@ -6,7 +8,7 @@
 
 ### Table of Content
 
-1. [About libft](#about-libft)
+1. [About Open Libft](#about-libft)
 2. [Norminette](#norminette)
 3. [Functions](#functions)
 4. [Setup](#setup)
@@ -19,14 +21,14 @@
 	3. [errno](#errno)
 7. [License](#license)
 
-# About libft <a name="about-libft"></a>
+# About Open Libft <a name="about-libft"></a>
 
-<img src="resources/libft-logo.png" width=250 />
-
-Implementation of some of the Standard C Library functions, plus some additional
-ones. This library has been used throughout my academic career in
-[École 42](http://42.us.org). It incorporates very useful functions, such as
-binary trees, linked lists, stack, arrays, bit manipulation, etc...
+An open source library with over 200 functions. This library has been used
+throughout my academic career in [École 42](http://42.us.org).
+It incorporates very useful functions, such as binary trees, linked lists,
+stacks, arrays, bit manipulation, etc... I gained a thorough understanding of
+data structures, algorithms, unit testing, continuous integration,
+troubleshooting, and proper documentation.
 
 ## Norminette <a name="norminette"></a>
 
@@ -128,6 +130,13 @@ Run it with `assets/errno_test.c`, a test file used for to test ft_errno.h.
 1. `make`
 2. `gcc libft.a -I./includes ./assets/errno_test.c -o errno_test.o`
 3. `./errno_test.o`
+
+## TODO
+
+* Incorporate unit testing.
+* Finish Makefile test and install rules.
+* Finish Open Libft's manual page.
+* Fix continuous integration with TravisCI.
 
 ## License <a name="license"></a>
 
