@@ -1,12 +1,17 @@
-language: c
+os:
+  - osx
+language:
+  - c
 compiler:
   - clang
   - gcc
-install: make test
 script:
   - gem install norminette --pre
   - gem install --user-install json -v 1.8.3
   - sh norminette/check_norme.sh srcs includes
+  - make test
 email:
   on_success: never
   on_failure: never
+notifications:
+  email: false
