@@ -17,22 +17,22 @@
 ** For instance: "  a b c   d  " -> "abcd".
 */
 
-char   *ft_str_remove_whitespace(char *str)
+char	*ft_str_remove_whitespace(char *str)
 {
-  int   i;
-  int   j;
-  char *new_str;
+	int	i;
+	int	j;
+	char	*new_str;
 
-  i = 0;
-  j = 0;
-  if (!(new_str = (char *)malloc(sizeof(char) * ft_strlen(str))))
-    return (NULL);
-  while (str[i])
-  {
-    if (str[i] != ft_iswspace(str[i]))
-      new_str[j++] = str[i];
-    i += 1;
-  }
-  new_str[++j] = '\0';
-  return (new_str);
+	i = 0;
+	j = 0;
+	if (!(new_str = (char *)malloc(sizeof(char) * ft_strlen(str))))
+		return (NULL);
+	while (str[i])
+	{
+		if (str[i] != ft_iswspace(str[i]))
+			new_str[j++] = str[i];
+		i += 1;
+	}
+	new_str[++j] = '\0';
+	return (new_str);
 }
