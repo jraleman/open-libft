@@ -25,14 +25,15 @@ OBJS    := $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 # Define all the compiling flags.
 CC      := gcc
-CFLAGS  += -Wall -Werror -Wextra -g -fno-omit-frame-pointer -fsanitize=address
+CFLAGS  += -Wall -Werror -Wextra -g
+#-fsanitize=address -fno-omit-frame-pointer
 LFLAGS  += -I.
 AR      := ar rcs
 RLIB    := ranlib
 
 # Compile and create everything.
 all:	obj
-		$(MAKE) -j $(NAME)
+		@$(MAKE) -j $(NAME)
 
 # Creates the object files' directory.
 obj:
@@ -61,6 +62,14 @@ fclean: clean
 # Rule to re-make everything.
 re:		fclean all
 
+# Unit test the library.
+test:	all
+		@echo "Test"
+
+# Installs the library.
+install:test
+		@echo "You must be root to install"
+
 # Makes sure that gnu make will still run even if files called
 # clean / fclean / all and re already exist in the directory
-.PHONY:	all clean fclean re
+.PHONY:	all clean fclean re test install
