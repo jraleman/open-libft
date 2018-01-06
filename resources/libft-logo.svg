@@ -12,7 +12,10 @@
    version="1.1"
    id="svg20"
    sodipodi:docname="libft-logo.svg"
-   inkscape:version="0.92.2 5c3e80d, 2017-08-06">
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   inkscape:export-filename="/home/jraleman/Desktop/open-libft/resources/libft-logo.svg.png"
+   inkscape:export-xdpi="194.94037"
+   inkscape:export-ydpi="194.94037">
   <defs
      id="defs24">
     <clipPath
@@ -97,7 +100,7 @@
      showgrid="false"
      units="mm"
      inkscape:zoom="1.4142136"
-     inkscape:cx="28.288252"
+     inkscape:cx="-91.919898"
      inkscape:cy="-118.23102"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -114,7 +117,7 @@
     <dc:format>image/svg+xml</dc:format>
     <dc:type
        rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-    <dc:title></dc:title>
+    <dc:title />
   </cc:Work>
 </rdf:RDF>
 </metadata>
@@ -126,7 +129,10 @@
      y="97.552315"
      x="94.834503"
      xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:82.82794189px;font-family:Gudea;fill:#2c5aa0;fill-opacity:1;stroke-width:2.07069564"><tspan
+     style="font-style:normal;font-weight:normal;font-size:82.82794189px;font-family:Gudea;fill:#2c5aa0;fill-opacity:1;stroke-width:2.07069564"
+     inkscape:export-filename="/home/jraleman/text850-7-6.png"
+     inkscape:export-xdpi="121.83774"
+     inkscape:export-ydpi="121.83774"><tspan
        font-style="normal"
        font-weight="normal"
        y="97.552315"
@@ -138,7 +144,10 @@
      style="font-style:normal;font-weight:normal;font-size:42.95362854px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#373e48;fill-opacity:1;stroke:none;stroke-width:1.07384074"
      x="98.699554"
      y="22.758888"
-     id="text850"><tspan
+     id="text850"
+     inkscape:export-filename="/home/jraleman/text850-7-6.png"
+     inkscape:export-xdpi="121.83774"
+     inkscape:export-ydpi="121.83774"><tspan
        sodipodi:role="line"
        id="tspan848"
        x="98.699554"
@@ -151,7 +160,10 @@
      id="g1067-3"
      transform="matrix(0.58481602,0,0,0.58481602,-23.242586,-48.228676)">
     <g
-       id="g1043-5">
+       id="g1043-5"
+       inkscape:export-filename="/home/jraleman/text850-7-6.png"
+       inkscape:export-xdpi="121.83774"
+       inkscape:export-ydpi="121.83774">
       <g
          id="g1586-6"
          transform="matrix(1.8308505,0,0,1.8308505,2398.8937,-164.73925)">
@@ -206,7 +218,10 @@
        y="125.61918"
        x="55.976265"
        style="font-style:normal;font-weight:normal;font-size:22.79707527px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#dbdee3;fill-opacity:1;stroke:none;stroke-width:0.56992692"
-       xml:space="preserve"><tspan
+       xml:space="preserve"
+       inkscape:export-filename="/home/jraleman/text850-7-6.png"
+       inkscape:export-xdpi="121.83774"
+       inkscape:export-ydpi="121.83774"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Baumans;-inkscape-font-specification:Baumans;fill:#dbdee3;stroke-width:0.56992692"
          y="125.61918"
          x="55.976265"

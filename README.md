@@ -1,6 +1,6 @@
 # Open Libft
 
-![logo](resources/libft-logo.svg)
+![logo](resources/libft-logo.svg.png)
 
 [![Build Status](https://travis-ci.org/jraleman/libft.svg?branch=master)](https://travis-ci.org/jraleman/libft) ![Norminette](https://img.shields.io/badge/norminette-failing-yellow.svg)
 ![Standard](https://img.shields.io/badge/standard-ANSI%20C89-lightgrey.svg)
