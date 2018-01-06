@@ -1,10 +1,10 @@
 # Open Libft
 
+![logo](resources/libft-logo.svg)
+
 [![Build Status](https://travis-ci.org/jraleman/libft.svg?branch=master)](https://travis-ci.org/jraleman/libft) ![Norminette](https://img.shields.io/badge/norminette-failing-yellow.svg)
 ![Standard](https://img.shields.io/badge/standard-ANSI%20C89-lightgrey.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-
-![logo](resources/libft-logo.svg)
 
 ## Table of Content
 
@@ -23,12 +23,12 @@
 
 ## About Open Libft <a name="about-libft"></a>
 
-An open source library with over 200 functions. This library has been used
-throughout my academic career in [École 42](http://42.us.org).
-It incorporates very useful functions, such as binary trees, linked lists,
-stacks, arrays, bit manipulation, etc... I gained a thorough understanding of
-data structures, algorithms, unit testing, continuous integration,
-troubleshooting, and proper documentation.
+open-libft is an open source library with over 200 functions.
+This library has been used throughout my academic career in [École 42 Silicon Valley](http://42.us.org).
+It incorporates very useful functions, including binary trees, linked lists,
+stacks, arrays, bit manipulation, and more.
+By developing this library, I gained a thorough understanding of data structures, algorithms,
+unit testing, continuous integration, troubleshooting, and proper documentation.
 
 ## Norminette <a name="norminette"></a>
 
