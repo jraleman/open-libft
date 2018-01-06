@@ -27,7 +27,6 @@ typedef struct		s_stack
 ** Functions by type stack.h
 */
 
-void				ft_stck_show(t_stack *top);
 void				ft_stck_push(t_stack *top, double newdata);
 double				ft_stck_pop(t_stack *top);
 
