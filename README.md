@@ -1,10 +1,10 @@
-<img src="resources/libft-logo.png" width=250 />
-
 ## Open Libft
 
 [![Build Status](https://travis-ci.org/jraleman/libft.svg?branch=master)](https://travis-ci.org/jraleman/libft) ![Norminette](https://img.shields.io/badge/norminette-failing-yellow.svg)
 ![Standard](https://img.shields.io/badge/standard-ANSI%20C89-lightgrey.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
+![logo](resources/libft-logo.svg)
 
 ### Table of Content
 
