@@ -17,11 +17,11 @@
 ** Functions by type stdlib.h
 */
 
-int					ft_atoi(const char *str);
-int					ft_atoi_base(const char *str, int base);
-char				*ft_itoa(int n);
-char				*ft_itoa_base(int value, int base);
-void				*ft_realloc(void *ptr, size_t size);
-void				*ft_calloc(size_t count, size_t size);
+int		ft_atoi(const char *str);
+int		ft_atoi_base(const char *str, int base);
+char	*ft_itoa(int n);
+char	*ft_itoa_base(int value, int base);
+void	*ft_realloc(void *ptr, size_t size);
+void	*ft_calloc(size_t count, size_t size);
 
 #endif
