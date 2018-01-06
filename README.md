@@ -1,4 +1,4 @@
-## Open Libft
+# Open Libft
 
 [![Build Status](https://travis-ci.org/jraleman/libft.svg?branch=master)](https://travis-ci.org/jraleman/libft) ![Norminette](https://img.shields.io/badge/norminette-failing-yellow.svg)
 ![Standard](https://img.shields.io/badge/standard-ANSI%20C89-lightgrey.svg)
@@ -6,7 +6,7 @@
 
 ![logo](resources/libft-logo.svg)
 
-### Table of Content
+## Table of Content
 
 1. [About Open Libft](#about-libft)
 2. [Norminette](#norminette)
@@ -21,7 +21,7 @@
 	3. [errno](#errno)
 7. [License](#license)
 
-# About Open Libft <a name="about-libft"></a>
+## About Open Libft <a name="about-libft"></a>
 
 An open source library with over 200 functions. This library has been used
 throughout my academic career in [École 42](http://42.us.org).
