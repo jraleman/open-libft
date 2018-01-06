@@ -1,0 +1,33 @@
+.\" Manpage for open-libft
+.\" Contact jraleman@bendiburg.com to correct errors and/or typos.
+
+.TH open-libft 3 "Jan 06, 2018" "42 Silicon Valley" "Open Libft Manual Page"
+
+.SH NAME
+open-libft \- An open source C library
+
+.SH SYNOPSIS
+#include "libft.h"
+
+.SH DESCRIPTION
+open-libft is an open source library with over 200 functions. This library has
+been used throughout my academic career in École 42 Silicon Valley.
+It incorporates very useful functions, including binary trees, linked lists,
+stacks, arrays, bit manipulation, and more. By developing this library,
+I gained a thorough understanding of data structures, algorithms,
+unit testing, continuous integration, troubleshooting, and proper documentation.
+
+.SH STANDARDS
+open-libft follows the applicable standard (Norm) at 42. This is a
+programming standard defines a set of rules to follow when writing code.
+It must always respect the Norm for all C projects at the school,
+unless otherwise specified.
+
+.SH HISTORY
+My favorite pet project :)
+
+.SH AUTHOR
+Jose Ramon Aleman (jraleman@bendiburg.com)
+
+.SH SEE ALSO
+library(3), libc(7), stdio(3)
