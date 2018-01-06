@@ -13,7 +13,9 @@
 #include "libft.h"
 
 /*
-** ...
+** Used to isolate sequential tokens in a null-terminated string, str.
+** These tokens are separated in the string by at least one of the
+** characters in delim.
 */
 
 char	*ft_strtok(char *str, const char delim)
