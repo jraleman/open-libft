@@ -87,8 +87,7 @@
 # define FT_INT_MIN			(-2147483648)
 # define FT_INT_MAX			(2147483647)
 # define FT_LONG_MIN		(-9223372036854775808)
-//# define FT_LONG_MAX		(9223372036854775807)
-# define FT_LONG_MAX		~((long)0)
+# define FT_LONG_MAX		(9223372036854775807)
 # define FT_ULONG_MAX		(18446744073709551615)
 
 /*
@@ -127,7 +126,7 @@
 # define FT_ISUPPER(a)		(a >= 'A' && a <= 'Z')
 # define FT_ISLOWER(a)		(a >= 'a' && a <= 'z')
 # define FT_ISALPHA(a)		(FT_ISUPPER(a) || FT_ISLOWER(a))
-# define FT_ISALNUM(a)			(FT_ISALPHA(a) || FT_ISDIGIT(a))
+# define FT_ISALNUM(a)		(FT_ISALPHA(a) || FT_ISDIGIT(a))
 # define FT_ISASCII(a)		(a >= 0 && a <= 127)
 # define FT_ISBLANK(a)		(a == ' ' || a == '\t')
 # define FT_ISCNTRL(a)		((a >= 0 && a <= 37) || (a == 127))
@@ -148,17 +147,5 @@ typedef enum		e_bool
 	FALSE = 0,
 	TRUE = 1
 }					t_bool;
-
-/*
-** List of globlal variables.
-*/
-
-# ifndef GLOBAL_VAR
-#  define GLOBAL_VAR
-
-static const unsigned long	g_mask01;
-static const unsigned long	g_mask80;
-
-# endif
 
 #endif
