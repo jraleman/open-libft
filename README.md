@@ -53,8 +53,8 @@ Also, some of the functions included don't exist in the Standard C Library,
 but I still kept them defined by there behavior.
 For example, ft_strnew can also be in ft_string.h.
 
-Header File          | Functions
-:-------------------:|:---------:
+Header File          | List of Functions
+:--------------------|:----------
 **btree.h**          | btree_create_node, btree_level_count, btree_add_node, btree_apply_infix, btree_apply_suffix, btree_apply_prefix, btree_search_item
 **ft_math.h**        | ft_abs, ft_min, ft_min, ft_isprime, ft_sqrt, ft_trunc, ft_ceil, ft_round, ft_floor, ft_pow, ft_hypot, ft_sqrtl, ft_truncl, ft_ceill, ft_roundl, ft_floorl, ft_powl, ft_hypotl, ft_collatz_conjecture, ft_nextprime, ft_nbrlen, ft_factorial, ft_fibonacci, ft_find_next_prime
 **ft_list.h**        | ft_lstfree, ft_lstadd, ft_lstaddback, ft_lstappend, ft_lstiter, ft_lstdel, ft_lstdelone, ft_lstreverse, ft_lstnew, ft_lstmap
