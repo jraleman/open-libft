@@ -23,7 +23,7 @@
 
 ## About Open Libft <a name="about-libft"></a>
 
-open-libft is an open source library with over 200 functions.
+An open source library with over 200 functions.
 This library has been used throughout my academic career in [École 42 Silicon Valley](http://42.us.org).
 It incorporates very useful functions, including binary trees, linked lists,
 stacks, arrays, bit manipulation, and more.
@@ -133,10 +133,12 @@ Run it with `assets/errno_test.c`, a test file used for to test ft_errno.h.
 
 ## TODO
 
-* Incorporate unit testing.
+* [Incorporate unit testing.](http://pytest-c-testrunner.readthedocs.io/)
 * Finish Makefile test and install rules.
-* Finish Open Libft's manual page.
 * Fix continuous integration with TravisCI.
+* Finish ft_vdprintf double specifier (%f). Here are some resources:
+  - http://www.netlib.org/fp/dtoa.c 
+  - http://www.ryanjuckett.com/programming/printing-floating-point-numbers/
 
 ## License <a name="license"></a>
 
