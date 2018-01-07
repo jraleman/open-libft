@@ -134,12 +134,16 @@ Run it with `assets/errno_test.c`, a test file used for to test ft_errno.h.
 ## TODO
 
 * [Incorporate unit testing.](http://pytest-c-testrunner.readthedocs.io/)
-* Finish Makefile test and install rules.
 * Fix continuous integration with TravisCI.
+* Finish Makefile test and install rules. Here are some resources:
+  - https://stackoverflow.com/questions/41645207/how-to-write-install-target-in-makefile
+  - https://stackoverflow.com/questions/28403379/how-to-write-install-tag-in-makefile
+  - https://www.linuxquestions.org/questions/programming-9/how-do-i-write-a-make-install-makefile-that-determines-if-user-is-root-217198/
 * Finish ft_vdprintf double specifier (%f). Here are some resources:
   - http://www.netlib.org/fp/dtoa.c 
   - http://www.ryanjuckett.com/programming/printing-floating-point-numbers/
 
 ## License <a name="license"></a>
 
-This project is under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE/)
+file for details.
