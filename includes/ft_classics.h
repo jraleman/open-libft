@@ -20,6 +20,7 @@
 int		ft_active_bits(int value);
 int		ft_angle_to_degrees(int angle);
 int		ft_compact(char **tab, int length);
+int     ft_cisin(char *str, char c);
 int		ft_is_big_endian(void);
 int		ft_is_little_endian(void);
 int		ft_str_is_lowercase(char *str);
