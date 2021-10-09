@@ -140,6 +140,15 @@ Run it with `assets/errno_test.c`, a test file used for to test ft_errno.h.
   - https://stackoverflow.com/questions/28403379/how-to-write-install-tag-in-makefile
   - https://www.linuxquestions.org/questions/programming-9/how-do-i-write-a-make-install-makefile-that-determines-if-user-is-root-217198/
 
+## Support
+
+All my projects are free to read/clone on GitHub. I don't expect anyone to support me,
+but if you want, I really appreciate it from the bottom of my heart. ❤️
+
+<img alt="qrcode" src="https://user-images.githubusercontent.com/11222980/136663961-d09d6901-8106-4758-aeaa-5883b89c8726.png" style="height: 300px; width: auto;" />
+
+^ You can scan the code abover if you would like to support me with one amount, and I thank you in advance.
+
 ## License <a name="license"></a>
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE/)
